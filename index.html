@@ -14,6 +14,10 @@
       background-color: royalblue;
       text-align: center;
       padding: 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000; /* Ensures the banner stays on top of other elements */
     }
 
     .banner h1 {
@@ -22,11 +26,21 @@
       color: white; /* Text color */
       margin: 0; /* Remove default margin */
     }
+
+    /* Add some space below the banner to prevent content from being hidden */
+    body {
+      padding-top: 80px; /* Adjust as needed based on your banner height */
+    }
+
+    /* Your other styles go here */
   </style>
 </head>
 <body>
   <div class="banner">
     <h1>Kyle Cinnamond</h1>
   </div>
+
+  <!-- Your page content goes here -->
+
 </body>
 </html>
