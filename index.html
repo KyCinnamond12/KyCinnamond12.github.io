@@ -27,30 +27,36 @@
       margin: 0;
     }
 
-    .banner button {
-      background-color: white;
-      color: royalblue;
+    .resume-button {
+      display: block;
+      margin: 20px auto; /* Adjust margin for positioning */
       padding: 10px 20px;
-      font-size: 18px;
-      border: none;
-      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      color: royalblue;
+      border: 2px solid royalblue;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    /* Center the name */
-    .banner h1 {
-      display: inline-block;
+    .resume-button:hover {
+      background-color: royalblue;
+      color: white;
     }
 
     /* Add some space below the banner to prevent content from being hidden */
     body {
       padding-top: 120px; /* Adjust as needed based on your banner height */
     }
+
+    /* Your other styles go here */
   </style>
 </head>
 <body>
   <div class="banner">
     <h1>Kyle Cinnamond</h1>
-    <button onclick="location.href='blank_page.html'">Resume</button>
+    <a class="resume-button" href="#">Resume</a>
   </div>
 
   <!-- Your page content goes here -->
