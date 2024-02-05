@@ -17,37 +17,34 @@
       position: fixed;
       width: 100%;
       top: 0;
-      z-index: 1000;
+      z-index: 1000; /* Ensures the banner stays on top of other elements */
     }
 
     .banner h1 {
       font-family: 'Rockwell', sans-serif;
-      font-size: 36px;
-      color: white;
-      margin: 0;
-    }
-
-    .resume-button {
-      display: block;
-      margin: 20px auto; /* Adjust margin for positioning */
-      padding: 10px 20px;
-      font-size: 16px;
-      text-align: center;
-      text-decoration: none;
-      color: royalblue;
-      border: 2px solid royalblue;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    .resume-button:hover {
-      background-color: royalblue;
-      color: white;
+      font-size: 36px; /* Adjust the size as needed */
+      color: white; /* Text color */
+      margin: 0; /* Remove default margin */
     }
 
     /* Add some space below the banner to prevent content from being hidden */
     body {
-      padding-top: 120px; /* Adjust as needed based on your banner height */
+      padding-top: 80px; /* Adjust as needed based on your banner height */
+    }
+
+    .button-container {
+      text-align: center;
+      padding: 20px;
+      background-color: lightgrey;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: white;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     /* Your other styles go here */
@@ -56,10 +53,14 @@
 <body>
   <div class="banner">
     <h1>Kyle Cinnamond</h1>
-    <a class="resume-button" href="#">Resume</a>
+  </div>
+
+  <div class="button-container">
+    <button class="button">Click me</button>
   </div>
 
   <!-- Your page content goes here -->
 
 </body>
 </html>
+
