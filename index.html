@@ -17,27 +17,40 @@
       position: fixed;
       width: 100%;
       top: 0;
-      z-index: 1000; /* Ensures the banner stays on top of other elements */
+      z-index: 1000;
     }
 
     .banner h1 {
       font-family: 'Rockwell', sans-serif;
-      font-size: 36px; /* Adjust the size as needed */
-      color: white; /* Text color */
-      margin: 0; /* Remove default margin */
+      font-size: 36px;
+      color: white;
+      margin: 0;
+    }
+
+    .banner button {
+      background-color: white;
+      color: royalblue;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Center the name */
+    .banner h1 {
+      display: inline-block;
     }
 
     /* Add some space below the banner to prevent content from being hidden */
     body {
-      padding-top: 80px; /* Adjust as needed based on your banner height */
+      padding-top: 120px; /* Adjust as needed based on your banner height */
     }
-
-    /* Your other styles go here */
   </style>
 </head>
 <body>
   <div class="banner">
     <h1>Kyle Cinnamond</h1>
+    <button onclick="location.href='blank_page.html'">Resume</button>
   </div>
 
   <!-- Your page content goes here -->
