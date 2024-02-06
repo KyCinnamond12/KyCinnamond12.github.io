@@ -8,9 +8,13 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, royalblue, white) 40vh; /* Gradient background starting from 30% of viewport height */
+      background: linear-gradient(to bottom, royalblue, white) 30vh; /* Gradient background starting from 30% of viewport height */
       color: white; /* Set text color to white for better visibility on gradient background */
       height: 100%; /* Make sure the body takes the full height of the viewport */
+    }
+
+    body {
+      padding-top: 80px; /* Adjust as needed based on your banner height */
     }
 
     .banner {
@@ -20,10 +24,11 @@
       text-align: left;
       padding: 20px;
       position: fixed;
-      width: 100%;
+      width: calc(100% - 40px); /* 20px padding on both sides */
       top: 0;
       z-index: 1000; /* Ensures the banner stays on top of other elements */
       background: transparent; /* Set background to transparent to allow the gradient to show through */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
     }
 
     .banner h1 {
@@ -35,7 +40,7 @@
 
     .button-container {
       text-align: right;
-      padding: 50px;
+      width: 50%; /* Adjust as needed */
     }
 
     .button {
@@ -47,6 +52,16 @@
       border-radius: 5px;
       cursor: pointer;
       margin: 0 10px; /* Add some spacing between buttons */
+    }
+
+    /* Additional styling to give space on both sides of the page */
+    body {
+      margin: 0 20px; /* Adjust as needed */
+    }
+
+    /* Add padding to the content to prevent it from being hidden behind the fixed banner */
+    .content {
+      padding-top: 100px; /* Adjust as needed based on your banner height */
     }
   </style>
 </head>
@@ -60,19 +75,25 @@
     </div>
   </div>
 
+  <div class="content">
+    <!-- Your page content goes here -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+  </div>
+
   <script>
     function openResume() {
       window.location.href = 'resume.html';
     }
 
     function openAboutMe() {
-      window.location.href = 'aboutme.html';    }
+      window.open('about_me.html', '_blank');
+    }
 
     function openProjects() {
-     window.location.href = 'projects.html';    }
+      // You can specify the Projects page URL or handle it as needed
+      alert("Projects page is under construction!");
+    }
   </script>
-
-  <!-- Your page content goes here -->
 
 </body>
 </html>
