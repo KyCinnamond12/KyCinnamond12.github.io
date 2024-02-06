@@ -8,10 +8,15 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, royalblue, white); /* Set gradient on both html and body */
+      background: linear-gradient(to bottom, royalblue, white);
       color: white;
       height: 100%;
       overflow-x: hidden;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
     }
 
     .banner {
@@ -59,16 +64,14 @@
       background-color: lightgrey;
       border-radius: 10px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      position: absolute;
-      top: 30%;
-      left: 60%; /* Adjusted to center the boxes horizontally */
-      transform: translateX(-50%); /* Center the box horizontally */
+      position: relative;
+      margin: auto;
+      margin-top: 10vh; /* Adjust as needed based on your design */
     }
 
     /* Create a mirrored box by using the same class with adjustments */
     .gray-box.mirrored {
-      transform: scaleX(-1) translateX(-50%); /* Mirror horizontally and center the box horizontally */
-      left: 40%; /* Adjusted to center the boxes horizontally */
+      transform: scaleX(-1); /* Mirror horizontally */
     }
   </style>
 </head>
@@ -106,3 +109,4 @@
   </script>
 </body>
 </html>
+
