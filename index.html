@@ -8,19 +8,18 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: black;
-      color: white; /* Set text color to white for better visibility on black background */
+      background: linear-gradient(to bottom, royalblue, black); /* Gradient background */
+      color: white; /* Set text color to white for better visibility on gradient background */
     }
 
     .banner {
-      background-color: royalblue;
       text-align: center;
       padding: 20px;
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 1000; /* Ensures the banner stays on top of other elements */
-      transition: background-color 0.5s ease; /* Add transition for smooth color change */
+      background: linear-gradient(to bottom, royalblue, black); /* Gradient background */
     }
 
     .banner h1 {
@@ -38,14 +37,15 @@
     .button-container {
       text-align: center;
       padding: 20px;
-      background-color: black;
+      background: linear-gradient(to bottom, royalblue, black); /* Gradient background */
     }
 
     .button {
-      padding: 12px 24px; /* Adjusted for larger buttons */
-      font-size: 18px; /* Adjusted for larger font size */
-      background-color: white;
-      border: 1px solid black;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: linear-gradient(to bottom, royalblue, black); /* Gradient background */
+      color: white; /* Set text color to white for better visibility on gradient background */
+      border: 1px solid white;
       border-radius: 5px;
       cursor: pointer;
       margin: 0 10px; /* Add some spacing between buttons */
@@ -69,21 +69,16 @@
     }
 
     function openAboutMe() {
-      window.location.href = 'aboutme.html';
+      window.open('about_me.html', '_blank');
     }
 
     function openProjects() {
-      window.location.href = 'projects.html';
+      // You can specify the Projects page URL or handle it as needed
+      alert("Projects page is under construction!");
     }
   </script>
 
   <!-- Your page content goes here -->
 
-  <script>
-    // Script to change the banner background color after a delay
-    setTimeout(function() {
-      document.querySelector('.banner').style.backgroundColor = 'black';
-    }, 2000); // Change the background color after 2000 milliseconds (2 seconds)
-  </script>
 </body>
 </html>
