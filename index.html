@@ -47,9 +47,8 @@
       border: 1px solid lightgrey;
       border-radius: 5px;
       cursor: pointer;
+      margin: 0 10px; /* Add some spacing between buttons */
     }
-
-    /* Your other styles go here */
   </style>
 </head>
 <body>
@@ -59,11 +58,23 @@
 
   <div class="button-container">
     <button class="button" onclick="openResume()">Resume</button>
+    <button class="button" onclick="openAboutMe()">About Me</button>
+    <button class="button" onclick="openProjects()">Projects</button>
   </div>
 
   <script>
     function openResume() {
       window.location.href = 'resume.html';
+    }
+
+    function openAboutMe() {
+      // You can specify the About Me page URL or handle it as needed
+      alert("About Me page is under construction!");
+    }
+
+    function openProjects() {
+      // You can specify the Projects page URL or handle it as needed
+      alert("Projects page is under construction!");
     }
   </script>
 
