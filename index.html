@@ -8,8 +8,11 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, royalblue, black) no-repeat; /* Gradient background */
       color: white; /* Set text color to white for better visibility on gradient background */
+    }
+
+    .gradient {
+      background: linear-gradient(to bottom, royalblue, black) no-repeat; /* Gradient background */
     }
 
     .banner {
@@ -19,7 +22,6 @@
       width: 100%;
       top: 0;
       z-index: 1000; /* Ensures the banner stays on top of other elements */
-      background: linear-gradient(to bottom, royalblue, black) no-repeat; /* Gradient background */
     }
 
     .banner h1 {
@@ -37,13 +39,11 @@
     .button-container {
       text-align: center;
       padding: 20px;
-      background: linear-gradient(to bottom, royalblue, black) no-repeat; /* Gradient background */
     }
 
     .button {
       padding: 10px 20px;
       font-size: 16px;
-      background: linear-gradient(to bottom, royalblue, black) no-repeat; /* Gradient background */
       color: white; /* Set text color to white for better visibility on gradient background */
       border: 1px solid white;
       border-radius: 5px;
@@ -52,7 +52,7 @@
     }
   </style>
 </head>
-<body>
+<body class="gradient">
   <div class="banner">
     <h1>Kyle Cinnamond</h1>
   </div>
@@ -69,10 +69,17 @@
     }
 
     function openAboutMe() {
-      window.location.href = 'aboutme.html';    }
+      window.location.href = 'aboutme.html';
+    }
 
     function openProjects() {
-      window.location.href = 'projects.html';    }
+      window.location.href = 'projects.html';
+    }
+
+    // Script to remove the gradient class after a delay
+    setTimeout(function() {
+      document.body.classList.remove('gradient');
+    }, 2000); // Remove the gradient class after 2000 milliseconds (2 seconds)
   </script>
 
   <!-- Your page content goes here -->
