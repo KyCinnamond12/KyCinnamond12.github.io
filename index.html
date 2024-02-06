@@ -8,10 +8,10 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, royalblue, white) 75vh; /* Gradient background starting from 75% of viewport height */
-      color: white; /* Set text color to white for better visibility on gradient background */
-      height: 100vh; /* Set body height to 100% of viewport height */
-      overflow-x: hidden; /* Hide horizontal scrollbar */
+      background: linear-gradient(to bottom, royalblue, white) 75vh;
+      color: white;
+      height: 100vh;
+      overflow-x: hidden;
     }
 
     .banner {
@@ -21,55 +21,55 @@
       text-align: left;
       padding: 20px;
       position: fixed;
-      width: calc(100% - 40px); /* Adjusted width to include 20px padding on both sides */
-      z-index: 1000; /* Ensures the banner stays on top of other elements */
-      background: transparent; /* Set background to transparent to allow the gradient to show through */
-      box-sizing: border-box; /* Include padding and border in the element's total width and height */
-      margin-top: 10px; /* Adjust as needed */
+      width: calc(100% - 40px);
+      z-index: 1000;
+      background: transparent;
+      box-sizing: border-box;
+      margin-top: 10px;
     }
 
     .banner h1 {
       font-family: 'Rockwell', sans-serif;
-      font-size: 36px; /* Adjust the size as needed */
-      color: white; /* Text color */
-      margin: 0; /* Remove default margin */
-      margin-right: 40px; /* Move the name to the right by 40px */
+      font-size: 36px;
+      color: white;
+      margin: 0;
+      margin-right: 40px;
     }
 
     .button-container {
-      text-align: left; /* Move buttons to the left */
-      margin-left: 40px; /* Add a margin to the left of the buttons */
+      text-align: left;
+      margin-left: 40px;
     }
 
     .button {
       padding: 10px 20px;
       font-size: 20px;
-      background: transparent; /* Set background to transparent to allow the gradient to show through */
-      color: white; /* Set text color to white for better visibility on gradient background */
+      background: transparent;
+      color: white;
       border: 2px solid white;
       border-radius: 6px;
       cursor: pointer;
-      margin: 0 10px; /* Add some spacing between buttons */
+      margin: 0 10px;
     }
 
     /* Light grey boxes with curved edges and shadows */
     .gray-box {
-      width: 600px; /* Adjust the width as needed */
-      height: 400px; /* Adjust the height as needed */
+      width: 600px;
+      height: 400px;
       background-color: lightgrey;
       border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       position: absolute;
-      top: 30%; /* Center the box vertically */
-      left: 57%; /* Center the box horizontally */
+      top: 30%;
     }
-      /* Create a mirrored box by using the same class with adjustments */
+
+    /* Create a mirrored box by using the same class with adjustments */
     .gray-box.mirrored {
       transform: scaleX(-1); /* Mirror horizontally */
       left: 43%; /* Adjust the left position as needed */
     }
   </style>
-<title>Duplicate and Mirror Box</title></head>
+</head>
 <body>
   <div class="banner">
     <h1>Kyle Cinnamond</h1>
@@ -83,7 +83,7 @@
 
   <!-- Light grey boxes -->
   <div class="gray-box"></div>
-  <div class="gray-box"></div>
+  <div class="gray-box mirrored"></div>
 
   <script>
     function openResume() {
