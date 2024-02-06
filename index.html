@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, royalblue, white); /* Gradient background */
+      background: linear-gradient(to bottom, royalblue, white) 50vh; /* Gradient background starting from 50% of viewport height */
       color: white; /* Set text color to white for better visibility on gradient background */
       height: 100vh; /* Set body height to 100% of viewport height */
       overflow-x: hidden; /* Hide horizontal scrollbar */
@@ -25,6 +25,7 @@
       z-index: 1000; /* Ensures the banner stays on top of other elements */
       background: transparent; /* Set background to transparent to allow the gradient to show through */
       box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      margin-top: 10px; /* Adjust as needed */
     }
 
     .banner h1 {
@@ -65,24 +66,17 @@
     </div>
   </div>
 
-  <div class="content">
-    <!-- Your page content goes here -->
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
-  </div>
-
   <script>
     function openResume() {
       window.location.href = 'resume.html';
     }
 
     function openAboutMe() {
-      window.open('about_me.html', '_blank');
+      window.location.href = 'aboutme.html';
     }
 
     function openProjects() {
-      // You can specify the Projects page URL or handle it as needed
-      alert("Projects page is under construction!");
-    }
+       window.location.href = 'projects.html';    }
   </script>
 </body>
 </html>
