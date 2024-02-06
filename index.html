@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, royalblue, white) 75vh;
+      background: linear-gradient(to bottom, royalblue, white); /* Adjusted to continue the gradient for the whole page */
       color: white;
       height: 100vh;
       overflow-x: hidden;
@@ -61,12 +61,14 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
       position: absolute;
       top: 30%;
+      left: 50%; /* Adjusted to center the boxes horizontally */
+      transform: translateX(-50%); /* Center the box horizontally */
     }
 
     /* Create a mirrored box by using the same class with adjustments */
     .gray-box.mirrored {
-      transform: scaleX(-1); /* Mirror horizontally */
-      left: 55%; /* Adjust the left position as needed */
+      transform: scaleX(-1) translateX(-50%); /* Mirror horizontally and center the box horizontally */
+      left: 50%; /* Adjusted to center the boxes horizontally */
     }
   </style>
 </head>
