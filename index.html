@@ -5,16 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kyle Cinnamond</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, royalblue, white) 40vh; /* Gradient background starting from 30% of viewport height */
+      background: linear-gradient(to bottom, royalblue, white); /* Gradient background */
       color: white; /* Set text color to white for better visibility on gradient background */
-      height: 100%; /* Make sure the body takes the full height of the viewport */
-    }
-
-    body {
-      padding-top: 80px; /* Adjust as needed based on your banner height */
+      height: 100vh; /* Set body height to 100% of viewport height */
+      overflow-x: hidden; /* Hide horizontal scrollbar */
     }
 
     .banner {
@@ -24,8 +21,7 @@
       text-align: left;
       padding: 20px;
       position: fixed;
-      width: calc(100% - 40px); /* 20px padding on both sides */
-      top: 0;
+      width: 100%;
       z-index: 1000; /* Ensures the banner stays on top of other elements */
       background: transparent; /* Set background to transparent to allow the gradient to show through */
       box-sizing: border-box; /* Include padding and border in the element's total width and height */
@@ -40,7 +36,6 @@
 
     .button-container {
       text-align: right;
-      width: 50%; /* Adjust as needed */
     }
 
     .button {
@@ -54,14 +49,9 @@
       margin: 0 10px; /* Add some spacing between buttons */
     }
 
-    /* Additional styling to give space on both sides of the page */
-    body {
-      margin: 20px; /* Adjust as needed */
-    }
-
     /* Add padding to the content to prevent it from being hidden behind the fixed banner */
     .content {
-      padding-top: 100px; /* Adjust as needed based on your banner height */
+      padding-top: 80px; /* Adjust as needed based on your banner height */
     }
   </style>
 </head>
@@ -74,6 +64,12 @@
       <button class="button" onclick="openProjects()">Projects</button>
     </div>
   </div>
+
+  <div class="content">
+    <!-- Your page content goes here -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+  </div>
+
   <script>
     function openResume() {
       window.location.href = 'resume.html';
@@ -88,6 +84,5 @@
       alert("Projects page is under construction!");
     }
   </script>
-
 </body>
 </html>
