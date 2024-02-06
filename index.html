@@ -20,6 +20,7 @@
       width: 100%;
       top: 0;
       z-index: 1000; /* Ensures the banner stays on top of other elements */
+      transition: background-color 0.5s ease; /* Add transition for smooth color change */
     }
 
     .banner h1 {
@@ -41,8 +42,8 @@
     }
 
     .button {
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 12px 24px; /* Adjusted for larger buttons */
+      font-size: 18px; /* Adjusted for larger font size */
       background-color: white;
       border: 1px solid black;
       border-radius: 5px;
@@ -68,13 +69,21 @@
     }
 
     function openAboutMe() {
-      window.location.href = 'aboutme.html';    }
+      window.location.href = 'aboutme.html';
+    }
 
     function openProjects() {
-      window.location.href = 'projects.html';    }
+      window.location.href = 'projects.html';
+    }
   </script>
 
   <!-- Your page content goes here -->
 
+  <script>
+    // Script to change the banner background color after a delay
+    setTimeout(function() {
+      document.querySelector('.banner').style.backgroundColor = 'black';
+    }, 2000); // Change the background color after 2000 milliseconds (2 seconds)
+  </script>
 </body>
 </html>
