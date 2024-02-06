@@ -17,6 +17,7 @@
     body {
       display: flex;
       flex-direction: column;
+      align-items: center; /* Center content horizontally */
     }
 
     .banner {
@@ -73,6 +74,10 @@
       transform: scaleX(-1); /* Mirror horizontally */
     }
 
+    /* Styles for the centered text */
+    .centered-text {
+      font-size: 36px;
+      margin-top: 20vh; /* Adjust as needed based on your design */
     }
   </style>
 </head>
@@ -85,6 +90,11 @@
       <button class="button" onclick="openProjects()">Projects</button>
       <button class="button" onclick="openBlog()">Blog</button>
     </div>
+  </div>
+
+  <!-- New div for the centered text -->
+  <div class="centered-text">
+    Nick is a terrible defender
   </div>
 
   <script>
@@ -104,6 +114,5 @@
       window.location.href = 'blog.html';
     }
   </script>
-  Nick Sucks at Defense
 </body>
 </html>
