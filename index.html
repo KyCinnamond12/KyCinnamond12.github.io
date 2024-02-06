@@ -64,6 +64,13 @@
       margin-top: 20vh; /* Adjust as needed based on your design */
     }
 
+    /* Style for the image container */
+    .image-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px; /* Adjust as needed based on your design */
+    }
+
     /* Style for the image */
     .centered-text img {
       max-width: 50%; /* Set maximum width to 100% of its container */
@@ -80,9 +87,19 @@
       <button class="button" onclick="openProjects()">Projects</button>
       <button class="button" onclick="openBlog()">Blog</button>
     </div>
+  </div>
+
+  <!-- New div for the centered text -->
+  <div class="centered-text">
+    Nick is a terrible defender
+    <br> Strib likes cock up his ass <br>
     
-    <img src="IMG_0174.jpeg">
-    <img src="IMG_6920.PNG"> 
+    <!-- Image container for horizontal layout -->
+    <div class="image-container">
+      <img src="IMG_0174.jpeg">
+      <img src="IMG_6920.png"> 
+    </div>
+  </div>
 
   <script>
     function openResume() {
