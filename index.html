@@ -59,12 +59,11 @@
 
     /* Light grey boxes with curved edges and shadows */
     .gray-box {
-      width: 600px;
+      width: 400px;
       height: 800px;
       background-color: lightgrey;
       border-radius: 10px;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      position: relative;
       margin: auto;
       margin-top: 10vh; /* Adjust as needed based on your design */
     }
@@ -72,6 +71,11 @@
     /* Create a mirrored box by using the same class with adjustments */
     .gray-box.mirrored {
       transform: scaleX(-1); /* Mirror horizontally */
+    }
+
+    /* Ensure the boxes appear horizontally */
+    .gray-box.mirrored {
+      margin-left: 20px; /* Adjust as needed to create space between the boxes */
     }
   </style>
 </head>
@@ -109,4 +113,3 @@
   </script>
 </body>
 </html>
-
