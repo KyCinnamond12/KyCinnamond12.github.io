@@ -1,37 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smiley Face in a Green Box</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: #f0f0f0; /* Background color of the page */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu with Buttons</title>
+    <style>
+        /* Style for the dropdown button */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-    .green-box {
-      width: 600px;
-      height: 600px;
-      background-color: green;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        .dropdown-btn {
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
 
-    .smiley-face {
-      font-size: 200px;
-    }
-  </style>
+        .dropdown-btn span {
+            margin-right: 5px;
+        }
+
+        /* Style for the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            width: 100%;
+        }
+
+        /* Style for each dropdown option/button */
+        .dropdown-content button {
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            background-color: #f9f9f9;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style for each dropdown option/button on hover */
+        .dropdown-content button:hover {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 <body>
-  <div class="green-box">
-    <div class="smiley-face">😊</div>
-  </div>
+
+<!-- Dropdown container -->
+<div class="dropdown">
+    <button class="dropdown-btn" onclick="toggleDropdown()">
+        <span>&#9776;</span> Select an option
+    </button>
+    <!-- Dropdown content -->
+    <div class="dropdown-content" id="myDropdown">
+        <!-- Dropdown options/buttons -->
+        <button onclick="handleButtonClick('Option 1')">Option 1</button>
+        <button onclick="handleButtonClick('Option 2')">Option 2</button>
+        <button onclick="handleButtonClick('Option 3')">Option 3</button>
+    </div>
+</div>
+
+<!-- Script to handle dropdown toggle and button click -->
+<script>
+    function toggleDropdown() {
+        var dropdownContent = document.getElementById("myDropdown");
+        dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+    }
+
+    function handleButtonClick(option) {
+        alert('Selected option: ' + option);
+    }
+</script>
+
 </body>
 </html>
