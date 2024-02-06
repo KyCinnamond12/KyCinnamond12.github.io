@@ -8,13 +8,16 @@
     html, body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom, royalblue, white) 40vh; /* Gradient background starting from 30% of viewport height */
+      background: linear-gradient(to bottom, royalblue, white) 30vh; /* Gradient background starting from 30% of viewport height */
       color: white; /* Set text color to white for better visibility on gradient background */
       height: 100%; /* Make sure the body takes the full height of the viewport */
     }
 
     .banner {
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
       padding: 20px;
       position: fixed;
       width: 100%;
@@ -30,13 +33,8 @@
       margin: 0; /* Remove default margin */
     }
 
-    /* Add some space below the banner to prevent content from being hidden */
-    body {
-      padding-top: 80px; /* Adjust as needed based on your banner height */
-    }
-
     .button-container {
-      text-align: center;
+      text-align: right;
       padding: 20px;
     }
 
@@ -55,12 +53,11 @@
 <body>
   <div class="banner">
     <h1>Kyle Cinnamond</h1>
-  </div>
-
-  <div class="button-container">
-    <button class="button" onclick="openResume()">Resume</button>
-    <button class="button" onclick="openAboutMe()">About Me</button>
-    <button class="button" onclick="openProjects()">Projects</button>
+    <div class="button-container">
+      <button class="button" onclick="openResume()">Resume</button>
+      <button class="button" onclick="openAboutMe()">About Me</button>
+      <button class="button" onclick="openProjects()">Projects</button>
+    </div>
   </div>
 
   <script>
@@ -72,7 +69,7 @@
       window.location.href = 'aboutme.html';    }
 
     function openProjects() {
-      window.location.href = 'projects.html';    }
+     window.location.href = 'projects.html';    }
   </script>
 
   <!-- Your page content goes here -->
