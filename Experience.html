@@ -87,6 +87,7 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
+            position: relative;
         }
 
         .contact-me:hover .contact-menu {
@@ -115,6 +116,26 @@
         .contact-menu a:hover {
             background-color: #ddd;
         }
+
+        /* New Contact Modal */
+        .contact-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
     </style>
 </head>
 <body>
@@ -129,7 +150,7 @@
             </div>
         </div>
 
-        <a href="#" class="contact-me">Contact Me
+        <a href="#" class="contact-me" onclick="toggleContactModal()">Contact Me
             <div class="contact-menu">
                 <a href="#">Email</a>
                 <a href="#">Phone</a>
@@ -138,5 +159,21 @@
     </nav>
 
     <h1>Work Experience</h1>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal" onclick="toggleContactModal()">
+        <div class="contact-content" onclick="event.stopPropagation();">
+            <h2>Contact Information</h2>
+            <p>Email: your.email@example.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleContactModal() {
+            var modal = document.getElementById('contactModal');
+            modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'flex' : 'none';
+        }
+    </script>
 </body>
 </html>
