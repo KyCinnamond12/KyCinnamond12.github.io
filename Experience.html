@@ -26,7 +26,7 @@
         nav a {
             float: left;
             display: block;
-            color: RoyalBlue;
+            color: white;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
@@ -78,12 +78,49 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
+        /* New Contact Me Link */
+        .contact-me {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .contact-me:hover .contact-menu {
+            display: block;
+        }
+
+        .contact-menu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+            top: 60px;
+        }
+
+        .contact-menu a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .contact-menu a:hover {
+            background-color: #ddd;
+        }
     </style>
 </head>
 <body>
     <nav>
         <div class="dropdown">
-            <button class="dropbtn">Navigation</button>
+            <button class="dropbtn">Menu</button>
             <div class="dropdown-content">
                 <a href="#">Home</a>
                 <a href="#">Resume</a>
@@ -91,6 +128,13 @@
                 <a href="#">About Me</a>
             </div>
         </div>
+
+        <a href="#" class="contact-me">Contact Me
+            <div class="contact-menu">
+                <a href="#">Email</a>
+                <a href="#">Phone</a>
+            </div>
+        </a>
     </nav>
 
     <h1>Work Experience</h1>
