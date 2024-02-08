@@ -121,20 +121,20 @@
         .contact-modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 150%;
-            height: 150%;
-            background-color: rgba(0,0,0,0.5);
-            justify-content: center;
-            align-items: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            max-width: 500px; /* Set max-width as needed */
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: left;
         }
 
         .contact-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            text-align: left;
         }
     </style>
 </head>
@@ -163,17 +163,17 @@
     <!-- Contact Modal -->
     <div class="contact-modal" id="contactModal" onclick="toggleContactModal()">
         <div class="contact-content" onclick="event.stopPropagation();">
-            <h2>Contact Information</h2>
+            <h2 style="text-align: center;">Contact Information</h2>
             <p>Email: Kycinnamond@gmail.com</p>
             <p>Phone: +1 (610)-732-8556</p>
-            <p>Linkedin: www.linkedin.com/in/kyle-cinnamond-253616227//p>
+            <p>Linkedin: www.linkedin.com/in/kyle-cinnamond-253616227</p>
         </div>
     </div>
 
     <script>
         function toggleContactModal() {
             var modal = document.getElementById('contactModal');
-            modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'flex' : 'none';
+            modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
         }
     </script>
 </body>
