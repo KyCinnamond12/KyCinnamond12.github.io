@@ -17,11 +17,7 @@
             padding: 30px;
             margin: 0;
         }
-        
-        .page-break {
-            page-break-before: always;
-        }
-        
+  
         nav {
             background-color: #333;
             overflow: hidden;
@@ -152,6 +148,12 @@
         .contact-content {
             text-align: left;
         }
+
+        .section-divider {
+            width: 100%;
+            border-bottom: 1px solid #333; /* Dark grey border color */
+            margin-bottom: 20px; /* Adjust margin as needed */
+        }
     </style>
 </head>
 <body>
@@ -176,7 +178,7 @@
 
     <h1>Work Experience</h1>
 
-    <div class="page-break"></div>
+    <div class="section-divider"></div>
 
     <!-- Overlay div -->
     <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
