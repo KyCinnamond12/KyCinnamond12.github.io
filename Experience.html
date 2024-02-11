@@ -12,12 +12,12 @@
         }
 
         h1 {
-            font-size: 40px;
+            font-size: 70px;
             text-align: center;
             padding: 30px;
             margin: 0;
         }
-        
+
         nav {
             background-color: #333;
             overflow: hidden;
@@ -43,7 +43,7 @@
         }
 
         .dropdown .dropbtn {
-            font-size: 16px;  
+            font-size: 16px;
             border: none;
             outline: none;
             color: white;
@@ -58,7 +58,7 @@
             position: absolute;
             background-color: #f9f9f9;
             min-width: 200px; /* Adjusted min-width */
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 1;
         }
 
@@ -147,8 +147,7 @@
 
         .contact-content {
             text-align: left;
-        }
-
+        
         .section-divider {
             width: 100%;
             border-bottom: 1px solid #333; /* Dark grey border color */
@@ -156,22 +155,26 @@
         }
 
         h2 {
-            font-size: 30px;
+            font-size: 50px;
             text-align: left;
             padding: 0px;
-            margin-top: 60px;
+            margin-top: 70px;
             font-family: 'Helvetica', sans-serif;
-            margin-left: 50px;
+            margin-left: 130px;
         }
 
-        /* Styles for the image */
-        img {
-            width: 200px; /* Make the image fill the width of its container */
-            height: 250px;
-            display: block; /* Make the image a block element */
-            margin-left: 175px;
-            opacity: 0.6; /* Set the opacity to 0.7 */
+        .background-container {
+            background-image: url('PCap.png');
+            background-size: 250px;
+            background-repeat: no-repeat;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            margin-left: 30px;
+            min-height: 300px; /* Adjust this value based on your content height */
+            margin-top: 50px;
         }
+
     </style>
 </head>
 <body>
@@ -198,9 +201,9 @@
 
     <div class="section-divider"></div>
 
-    <h2>Princeton Capital Management</h2>  
-
-    <img src="PCap.png" alt="Logo">
+    <div class="background-container">
+        <h2>Princeton Capital Management</h2>  
+    </div>
     
     <!-- Overlay div -->
     <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
@@ -225,7 +228,4 @@
     </script>
 </body>
 </html>
-
-
-
 
