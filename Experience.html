@@ -153,7 +153,29 @@
             width: 100%;
             border-bottom: 1px solid #333; /* Dark grey border color */
             margin-top: -10px; /* Adjust margin as needed */    
-    
+
+        h2 {
+            font-size: 50px;
+            text-align: left;
+            padding: 0px;
+            margin-top: 70px;
+            font-family: 'Helvetica', sans-serif;
+            margin-left: 130px;
+        }
+
+        .background-container {
+            background-image: url('PCap.png');
+            background-size: 250px;
+            background-repeat: no-repeat;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            margin-left: 30px;
+            min-height: 300px; /* Adjust this value based on your content height */
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
+        }    
     </style>
 </head>
 <body>
@@ -179,8 +201,11 @@
     <h1>Work Experience</h1>
 
     <div class="section-divider"></div>
-</br>
-    <h2>Princeton Capital Management</h2>
+
+    <div class="background-container">
+        <h2>Princeton Capital Management</h2>
+    </div>
+    
     <!-- Overlay div -->
     <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
 
