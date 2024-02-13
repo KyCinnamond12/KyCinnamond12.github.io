@@ -183,10 +183,19 @@
             Text-align: center;
         }
 
-        iframe1 {
-            Margin-left: 100px;
-            
+        .iframe-container {
+            width: 80%; /* Set the width of the container */
+            max-width: 800px; /* Set a maximum width for responsiveness */
+            margin: 50px auto; /* Center the container horizontally with a top margin of 50px */
+            position: relative; /* Set position to relative for absolute positioning of child elements */
+        }
 
+        .iframe-container iframe {
+            width: 100%; /* Set the width of the embedded PDF to fill the container */
+            height: 500px; /* Set the height of the embedded PDF */
+            border: 2px solid #333; /* Add a border around the embedded PDF */
+            border-radius: 8px; /* Add border-radius for rounded corners */
+            
     </style>
 </head>
 <body>
@@ -218,8 +227,11 @@
     </div>
 
     </br>
-    
-    <iframe1 src="AIwhitepaper.pdf#toolbar=0" width="50%" height="400px" style="border: groove;"></iframe1>
+
+     <div class="iframe-container">
+        <!-- Replace "your-pdf-file.pdf" with the actual path or URL of your PDF -->
+        <iframe src="AIwhitepaper.pdf#toolbar=0"></iframe>
+    </div>
     
     <!-- Overlay div -->
     <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
