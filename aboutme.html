@@ -152,8 +152,18 @@
         .section-divider {
             width: 100%;
             border-bottom: 1px solid #333; /* Dark grey border color */
-            margin-top: -10px; /* Adjust margin as needed */    
-    
+            margin-top: -10px; /* Adjust margin as needed */   
+
+         .center-image {
+            text-align: center;
+            margin-top: 20px; /* Adjust margin as needed */
+        }
+
+        .center-image img {
+            border: 5px solid yellow; /* Yellow border */
+            border-radius: 10px; /* Border radius for a rounded corner effect */
+        }
+            
     </style>
 </head>
 <body>
@@ -179,7 +189,10 @@
     <h1>About Me</h1>
 
     <div class="section-divider"></div>
-    
+
+    <div class="center-image">
+        <img src="Beth.JPG" alt="Your Image">
+    </div>    
     <!-- Overlay div -->
     <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
 
