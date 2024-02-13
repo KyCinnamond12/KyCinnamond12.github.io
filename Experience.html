@@ -183,7 +183,14 @@
             Text-align: center;
         }
 
-        #AI {
+        .pdf-container {
+            width: 80%;
+            position: absolute;
+            border: 10px groove #333;
+            border-radius: 10px;
+        }        
+        
+        #pdfContainerAI {
             height: 450px;
             width: 100%;
             position: absolute;
@@ -191,7 +198,7 @@
             right: 30px; /* Right-aligned with a margin of 30px */
         }
 
-        #LookBook {
+        #pdfContainerLookBook {
             height: 350px;
             width: 80%;
             position: absolute;
@@ -232,14 +239,14 @@
 
     </br>
 
-     <div class="iframe-container" id="AI">
+    <div id="pdfContainerAI" class="pdf-container">
         <iframe src="AIwhitepaper.pdf#toolbar=0"></iframe>
     </div>
 
-     <div class="iframe-container" id="LookBook">
+    <div id="pdfContainerLookBook" class="pdf-container">
         <iframe src="LookBook2024.pdf#toolbar=0"></iframe>
-    </div>    
-
+    </div>
+    
     <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
 
     <!-- Contact Modal -->
