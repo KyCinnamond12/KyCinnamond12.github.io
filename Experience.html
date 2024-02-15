@@ -202,30 +202,18 @@
             border: none; /* Remove the border around the iframe */
         }    
 
+        hr {
+            border: 1px solid black;
+            width: 100%;
+        }        
+        
         h4 {
             font-size: 30px;
             margin: auto; /* Center the h4 text on the page */
             width: 100%; /* Set a width to control the centering */
             clear: right;
             text-align: center;
-        }
-
-        .line-container {
-            width: 100%;
-            text-align: center;
-            position: relative;
-            margin-top: -10px; /* Adjust as needed to align the line with the h4 text */
-        }
-
-        .line {
-            display: inline-block;
-            width: 40%; /* Adjust as needed to control the length of the line */
-            height: 2px; /* Adjust as needed to control the thickness of the line */
-            background-color: black;
-            position: absolute;
-            top: 50%; /* Center the line vertically */
-            transform: translateY(-50%); /* Adjust to vertically center the line */
-        }        
+        }  
         
         .pdf2-container {
             width: 80%;
@@ -281,11 +269,9 @@
         <iframe src="AIwhitepaper.pdf#toolbar=0"></iframe>
     </div>
 
-     <div class="line-container">
-        <div class="line"></div>
-        <h4>Banking Portfolio Look Book Project</h4>
-        <div class="line"></div>
-    </div>
+    <hr>
+    <h4>Banking Portfolio Look Book Project</h4>
+    <hr>
     
     <div class="pdf2-container">
         <iframe src="LB2024.pdf#toolbar=0"></iframe> 
