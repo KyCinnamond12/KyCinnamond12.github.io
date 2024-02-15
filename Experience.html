@@ -210,6 +210,20 @@
             text-align: center;
         }
 
+        .line-container {
+            width: 100%;
+            text-align: center;
+            position: relative;
+            margin-top: -10px; /* Adjust as needed to align the line with the h4 text */
+        }
+
+        .line {
+            display: inline-block;
+            width: 40%; 
+            height: 2px; 
+            background-color: black;
+        }
+        
         .pdf2-container {
             width: 80%;
             max-width: 800px;
@@ -264,7 +278,11 @@
         <iframe src="AIwhitepaper.pdf#toolbar=0"></iframe>
     </div>
 
-     <h4>---------- Banking Portfolio Look Book Project ----------</h4>
+     <div class="line-container">
+        <div class="line"></div>
+        <h4>Banking Portfolio Look Book Project</h4>
+        <div class="line"></div>
+    </div>
     
     <div class="pdf2-container">
         <iframe src="LB2024.pdf#toolbar=0"></iframe> 
