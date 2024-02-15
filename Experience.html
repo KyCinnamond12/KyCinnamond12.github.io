@@ -201,6 +201,24 @@
             height: 450px; /* Set the initial height, adjust as needed */
             border: none; /* Remove the border around the iframe */
         }    
+
+        .title-container {
+            text-align: center;
+            position: relative;
+            display: inline-block;
+        }
+
+        .line {
+            display: inline-block;
+            width: 50%; /* Adjust the width of the line as needed */
+            border-top: 1px solid black;
+            margin: 0;
+        }
+
+        .text {
+            display: inline-block;
+            padding: 0 10px; /* Adjust the padding as needed */
+        }
         
         h4 {
             font-size: 30px;
@@ -264,7 +282,11 @@
         <iframe src="AIwhitepaper.pdf#toolbar=0"></iframe>
     </div>
  
-    <h4>Banking Portfolio Look Book Project</h4>
+    <div class="title-container">
+        <div class="line"></div>
+        <div class="text">Banking Portfolio Look Book Project</div>
+        <div class="line"></div>
+    </div>
   
     <div class="pdf2-container">
         <iframe src="LB2024.pdf#toolbar=0"></iframe> 
