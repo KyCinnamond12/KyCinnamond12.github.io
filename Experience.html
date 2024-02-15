@@ -220,15 +220,13 @@
             border: none;
         }   
 
-       .centered-text {
+       h4 {
             font-size: 30px;
             text-align: center;
             text-decoration: underline;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
+            margin: 20px auto; /* Center the h4 text on the page */
+            width: 100%; /* Set a width to control the centering */
+            clear: both; /* Ensure the h4 clears both floated PDF containers */
         }
     </style>
 </head>
@@ -270,7 +268,7 @@
         <iframe src="LB2024.pdf#toolbar=0"></iframe> 
     </div>
     
-    <div class="centered-text">Banking Portfolio Look Book Project</div>
+    <h4>Banking Portfolio Look Book Project</h4>
     
     <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
 
