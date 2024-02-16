@@ -195,6 +195,12 @@
             text-align: center;
         }  
 
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: auto; /* Clear the float from the floating elements */
+        }    
+        
         .pdf1-container {
             width: 80%;
             max-width: 800px;
@@ -214,6 +220,12 @@
             border: none; /* Remove the border around the iframe */
         }    
 
+        .paragraph-container {
+            width: 50%; /* Adjust width as needed */
+            float: left;
+            margin-top: 20px; /* Adjust top margin for spacing */
+        }
+        
         .section-divider {
             width: 100%;
             border-bottom: 1px solid lightgrey; /* Dark grey border color */
@@ -284,8 +296,13 @@
     
     <h5>Artificial Intellgience White Paper Project</h5>
 
+    <div class="container">
+        <div class="pdf1-container">
+            <iframe src="AIwhitepaper.pdf#toolbar=0"></iframe>
+    </div>
 
-    <p>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries, leaving many 
+    <div class="paragraph-container">
+        <p>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries, leaving many 
         unfamiliar with its nature and intricacies.. This Artificial Intelligence Investment Presentation aims to answer four 
         major questions, What is it, How Do You Play, Who are the Winners, and Who are the Losers. These four major questions 
         come together to provide Investment options for the future of AI. An emphasis on “What is it” is made due to the importance 
@@ -293,11 +310,10 @@
         facilitate understanding throughout. The investment selections, curated in July 2023, provide insights into potential 
         opportunities, but it's crucial to note that the content does not constitute financial advice for 2024. This Presentation 
         serves as a entry-level guide for navigating the evolving AI landscape through the lens of Investment.</p>
-
-    <div class="pdf1-container">
-        <iframe src="AIwhitepaper.pdf#toolbar=0"></iframe>
     </div>
-
+</div>
+    
+</body>
 </br>
     <div class="section-divider"></div>
     
