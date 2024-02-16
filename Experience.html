@@ -195,17 +195,17 @@
             text-align: center;
         }  
 
-        .paragraph-container {
+        .content-container {
             width: 80%;
             margin: auto;
-            text-align: left; /* Align the text to the left */
+            overflow: auto; /* Clear the float from previous elements */
         }
 
-        .paragraph-container p {
-            margin-top: 20px; /* Add top margin for spacing */
-            line-height: 1.5;
-        }      
-
+        .paragraph-container {
+            width: 50%; /* Adjust width as needed */
+            float: left;
+            margin-top: 20px; /* Adjust top margin for spacing */
+        }
         .pdf1-container {
             width: 80%;
             max-width: 800px;
@@ -295,7 +295,8 @@
     
     <h5>Artificial Intellgience White Paper Project</h5>
 
-    <div class="paragraph-container">
+   <div class="content-container">
+       <div class="paragraph-container">
         <p>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries, leaving many 
         unfamiliar with its nature and intricacies.. This Artificial Intelligence Investment Presentation aims to answer four 
         major questions, What is it, How Do You Play, Who are the Winners, and Who are the Losers. These four major questions 
