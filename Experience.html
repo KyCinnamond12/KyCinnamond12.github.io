@@ -195,12 +195,12 @@
             text-align: center;
         }  
 
-        p1 { 
-            font-size: 19px;
-            text-align: left;
-            line-height: 1.25;
-        }
-        
+        .text-container {
+            flex: 1;
+            padding: 20px;
+            background-color: #e0e0e0;
+            margin-right: 20px; /* Add some margin between text and PDF containers */
+        }        
         .pdf1-container {
             width: 80%;
             max-width: 800px;
@@ -300,6 +300,8 @@
             <iframe src="AIwhitepaper.pdf#toolbar=0"></iframe>
     </div>
 
+<div class="container">
+    <div class="text-container">
         <p1>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries, leaving many 
         unfamiliar with its nature and intricacies.. This Artificial Intelligence Investment Presentation aims to answer four 
         major questions, What is it, How Do You Play, Who are the Winners, and Who are the Losers. These four major questions 
@@ -308,7 +310,13 @@
         facilitate understanding throughout. The investment selections, curated in July 2023, provide insights into potential 
         opportunities, but it's crucial to note that the content does not constitute financial advice for 2024. This Presentation 
         serves as a entry-level guide for navigating the evolving AI landscape through the lens of Investment.</p1>
-    
+    </div>
+        
+    <div class="pdf1-container">
+            <iframe src="AIwhitepaper.pdf#toolbar=0"></iframe>
+        </div> 
+    </div>
+        
     <div class="section-divider"></div>
     
     <h4>Banking Portfolio Look Book Project</h4>
