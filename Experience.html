@@ -404,19 +404,6 @@
             overlay.style.display = (overlay.style.display === 'none' || overlay.style.display === '') ? 'block' : 'none';
             modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
         }
-
-        function adjustPdfIframeWidth() {
-            var container = document.getElementById('pdf1-container');
-            var iframe = document.getElementById('pdf1-iframe');
-            var containerWidth = container.offsetWidth; // Get the width of the container
-            iframe.style.width = containerWidth + 'px'; // Set the width of the iframe to match the container
-        }
-
-        // Call the function on window resize
-        window.addEventListener('resize', adjustPdfIframeWidth);
-
-        // Initial adjustment on page load
-        window.addEventListener('load', adjustPdfIframeWidth);    
     </script>
 </div>
     
