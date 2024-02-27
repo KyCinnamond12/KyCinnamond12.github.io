@@ -175,13 +175,21 @@
             margin-top: 60px;
         }       
 
-        .west-chester-img {
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px; /* Adjust the top margin as needed */
+            margin-bottom: 40px; /* Adjust the bottom margin as needed */
+        }    
+        
+        .left-img {
             max-width: 30%; /* Adjust the width as needed */
             margin-left: 20px; /* Adjust the margin-left to center the image */
             border-radius: 20px;
         }
 
-        .Pittsburgh-img {
+        .right-img {
             max-width: 30%;
             margin-right: 20px;
             border-radius: 20px;
@@ -217,10 +225,10 @@
 
     <h3> Where I'm From </h3>
 
-    <img class="west-chester-img" src="West Chester.jpg" alt="West Chester Image">
-
-    <img class="Pittsburgh-img" src="Pittsburgh.jpg" alt="Pittsburgh Image">
-    
+    <div class"image-container">
+        <img class="left-img" src="West Chester.jpg" alt="West Chester Image">
+        <img class="right-img" src="Pittsburgh.jpg" alt="Pittsburgh Image">
+    </div>
     <!-- Overlay div -->
     <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
 
