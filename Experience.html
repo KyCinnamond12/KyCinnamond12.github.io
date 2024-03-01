@@ -209,20 +209,24 @@
         }  
 
         .custom-paragraph1 {
-           font-size: 19px;
-           text-align: center; /* Align text within the paragraph to the center */
-           font-family: 'Helvetica', sans-serif;
-           line-height: 1.25;
-           overflow-y: auto; /* Allow vertical scrolling when content exceeds the fixed height */
-           overflow-x: hidden; /* Hide horizontal scrolling */          
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           margin-left: 30px;
-           margin-top: 40px;
-           margin-left: auto; /* Align the left side of the paragraph to the left of the page */
-           margin-right: auto; /* Align the right side of the paragraph to the right of the page */
-           max-width: 800px; /* Optional: Set a maximum width for the paragraph */
+            font-size: 19px;
+            text-align: center; /* Align text within the paragraph to the center */
+            font-family: 'Helvetica', sans-serif;
+            line-height: 1.25;
+            overflow-y: auto; /* Allow vertical scrolling when content exceeds the fixed height */
+            overflow-x: hidden; /* Hide horizontal scrolling */          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 30px;
+            margin-top: 40px;
+            margin-left: auto; /* Align the left side of the paragraph to the left of the page */
+            margin-right: auto; /* Align the right side of the paragraph to the right of the page */
+            max-width: 800px; /* Optional: Set a maximum width for the paragraph */
+            position: relative; /* Add relative positioning */
+            top: 0; /* Initial position from the top */
+            position: -webkit-sticky;
+            position: sticky;  
         }        
 
         .fixed-size-paragraph1 {
