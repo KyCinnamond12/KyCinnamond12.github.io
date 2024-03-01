@@ -311,7 +311,24 @@
             width: 100%; /* Set a width to control the centering */
             text-align: center;
         }  
-        
+
+         .excel-container {
+            width: 56vw;
+            height: 450px;
+            margin: 70px auto;
+            overflow: auto;
+            border-radius: 10px;
+            float: left;
+            margin-left: 2vw;
+            clear: both;
+            margin-top: 40px;
+        }
+
+        .excel-container object {
+            width: 100%;
+            height: 100%;
+            border: none;
+            
     </style>
 </head>
 <body>
@@ -387,6 +404,11 @@
     <div class="section-divider section-divider-4"></div>  
 
     <h6>First of Long Island Bank 10-Year Projection Project</h6>
+
+    <div class="excel-container">
+        <object src="https://onedrive.live.com/embed?resid=FCE7D42EA0BC28D2%211131&authkey=!AJtj6gXJ5g7YdWw&em=2" width=100% height=100%>
+        </object>
+    </div>    
     
     <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
 
