@@ -225,6 +225,12 @@
             height: 450px;
             overflow: auto;
         }        
+
+         @media (max-width: 768px) {
+            .custom-paragraph1 {
+                margin-top: calc(100px - 60px * ((100vw - 320px) / (768 - 320))); /* Decrease margin as viewport width decreases */
+            }
+        }
         
          .pdf1-container {
             width: 56vw;
@@ -277,6 +283,12 @@
             height: 450px;
             overflow: auto;
         }       
+
+         @media (max-width: 768px) {
+            .custom-paragraph2 {
+                margin-top: calc(100px - 60px * ((100vw - 320px) / (768 - 320))); /* Decrease margin as viewport width decreases */
+            }
+        }
         
         .pdf2-container {
             width: 56vw;
@@ -350,7 +362,6 @@
            <iframe src="AIwhitepaper.pdf#toolbar=0&view=Fit" width="100%" height="100%"></iframe>            
     </div>    
 
-    <div class="custom-paragraph-container1">
         <p class="custom-paragraph1 fixed-size-paragraph1">The field of Artificial Intelligence has swiftly emerged as one of 
         the world's fastest-growing industries, leaving many unfamiliar with its nature and intricacies.. This Artificial 
         Intelligence Investment Presentation aims to answer four major questions, What is it, How Do You Play, Who are the 
@@ -360,8 +371,6 @@
         selections, curated in July 2023, provide insights into potential opportunities, but it's crucial to note that the 
         content does not constitute financial advice for 2024. This Presentation serves as an entry-level guide for navigating 
         the evolving AI landscape through the lens of Investment.</p>
-    </div>
-
         
     <div class="section-divider section-divider-3"></div>
     
@@ -375,7 +384,6 @@
     </object>
 </div>
 
-    <div class="custom-paragraph-container2">
         <p class="custom-paragraph2 fixed-size-paragraph2">The "Portfolio Look Book" serves as a visual resource
          for clients interested in the Banking Fund, offering a comprehensive overview of the Long Investments 
          within each portfolio. The presentation highlights crucial metrics carefully selected to provide a 
@@ -385,8 +393,6 @@
          evolution over the past two years.As the summaries evolve over the future Quarters and Years, certain 
          Metrics will be added and taken away to highlight certain aspects of a bank if their is something that 
          is important at the period of time.</p>
-    </div>
-
         
     <div class="section-divider section-divider-4"></div>  
 
