@@ -295,9 +295,8 @@
         .pdf2-container object {
             width: 99%;
             height: 100%;
-            border: 2px solid #333; /* Add a border around the iframe */
-            border-radius: 10px; /* Optional: Add border-radius for a rounded appearance */
-            box-sizing: border-box; /* Include border in the iframe's dimensions */         }   
+            border: none;     
+        }   
 
         .section-divider-4 {
             width: 100%;
@@ -319,8 +318,8 @@
             margin: 70px auto;
             overflow: auto;
             border-radius: 10px;
-            float: left;
-            margin-left: 2vw;
+            float: right;
+            margin-right: 2vw;
             clear: both;
             margin-top: 40px;
         }
@@ -330,8 +329,29 @@
             height: 100%;
             border: 2px solid #333; /* Add a border around the iframe */
             border-radius: 10px; /* Optional: Add border-radius for a rounded appearance */
-            box-sizing: border-box; /* Include border in the iframe's dimensions */            
-            
+            box-sizing: border-box; /* Include border in the iframe's dimensions */    
+        }
+
+         .custom-paragraph3 {
+            font-size: 20px;
+            text-align: center; /* Align text within the paragraph to the center */
+            font-family: 'Helvetica', sans-serif;
+            line-height: 1.25;        
+            margin-left: 2vw;
+            margin-top: 40px;
+            margin-left: auto; /* Align the left side of the paragraph to the left of the page */
+            margin-right: auto; /* Align the right side of the paragraph to the right of the page */
+            max-width: 800px; /* Optional: Set a maximum width for the paragraph */
+        }
+
+        .fixed-size-paragraph3 {
+            width: 38vw;
+            height: 450px;
+            overflow: auto;
+            margin-left: 2vw;
+            margin-right: 2vw;
+        }    
+        
     </style>
 </head>
 <body>
@@ -411,6 +431,14 @@
     <div class="pdf3-container">
         <iframe src="https://onedrive.live.com/embed?resid=FCE7D42EA0BC28D2%211131&authkey=!AJtj6gXJ5g7YdWw&em=2" width="402" height="346" frameborder="0" scrolling="no"></iframe>
     </div>
+
+        <p class="custom-paragraph3 fixed-size-paragraph3">  This is a filler paragraph. I am having a wonderful day, we went to the Pitt
+            basketball game and got free Pitt Pit Vipers and won the game. It was our last home game of our college career so you know we all
+            had to put the whole draftkings balance on the spread at -6.5. Of course we hit that thanks to the GOAT Blake Hinson (if only he
+            could make free throws...). We then came home and checked on our slowcooker Berio Tacos after 12 hours and they are gasssssss. Billy
+            and I will be eating them for a few days as we cooked 5 pounds of meat lol. </p>
+
+    
     
     <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
 
