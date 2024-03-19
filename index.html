@@ -62,7 +62,19 @@
     .centered-text {
       font-size: 36px;
       margin-top: 20vh; /* Adjust as needed based on your design */
-    
+    }
+
+    /* Styles for the right side box */
+    .right-box {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 200px; /* Adjust width as needed */
+      background-color: #f2f2f2; /* Light grey */
+      border-radius: 10px; /* Rounded edges */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Drop shadow */
+      z-index: 999; /* Ensure the box is above other content */
     }
   </style>
 </head>
@@ -77,6 +89,8 @@
       <button class="button" onclick="openBlog()">Blog</button>
     </div>
   </div>
+
+  <div class="right-box"></div>
 
   <script>
     function openResume() {
