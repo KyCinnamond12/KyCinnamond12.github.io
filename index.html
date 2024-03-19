@@ -119,18 +119,13 @@
       window.location.href = 'blog.html';
     }
 
-   function updateStockPrices() {
-    // Check if current time is within the update times (9:00 AM and 4:00 PM)
-    const currentTime = new Date();
-    const updateTimes = [9, 16]; // 9:00 AM and 4:00 PM
-
-    // Check if current hour is in the update times array
-    if (updateTimes.includes(currentTime.getHours())) {
-    // Replace 'YOUR_API_KEY' with your actual API key
-      const apiKey = 'YOUR_API_KEY';
-    // Replace 'AAPL,GOOGL,MSFT' with the symbols of the stocks you want to track
-      const symbols = 'AAPL,GOOGL,MSFT';
-      const apiUrl = `https://api.marketstack.com/v1/tickers/${symbols}/intraday/latest?access_key=${apiKey}`;
+    
+    function updateStockPrices() {
+      // Replace 'YOUR_API_KEY' with your actual Alpha Vantage API key
+      const apiKey = '3XF2G8OJ3RKRXR4V';
+      // Replace 'AAPL,GOOGL,MSFT' with the symbols of the stocks you want to track
+      const symbols = 'AMD,CRWD,MSFT';
+      const apiUrl = `https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=${symbols}&apikey=${apiKey}`;
 
       fetch(apiUrl)
         .then(response => response.json())
@@ -138,22 +133,20 @@
           const stockList = document.querySelector('.stock-list');
           stockList.innerHTML = ''; // Clear existing list items
 
-          data.data.forEach(stock => {
+          data['Stock Quotes'].forEach(stock => {
             const listItem = document.createElement('li');
-            listItem.textContent = `${stock.symbol}: $${stock.close}`;
+            listItem.textContent = `${stock['1. symbol']}: $${stock['2. price']}`;
             stockList.appendChild(listItem);
           });
         })
         .catch(error => console.log(error));
     }
-  }
 
-  // Update stock prices initially
-  updateStockPrices();
+    // Update stock prices initially
+    updateStockPrices();
 
-  // Update stock prices every hour
-  setInterval(updateStockPrices, 3600000); // 3600000 milliseconds = 1 hour    
-    
+    // Update stock prices every 12 hours (twice a day)
+    setInterval(updateStockPrices, 43200000); // 43200000 milliseconds = 12 hours    
   </script>
 </body>
 </html>
