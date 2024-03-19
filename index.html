@@ -117,7 +117,7 @@
     $(document).ready(function() {
         // Replace 'YOUR_API_KEY' with your Alpha Vantage API key
         var apiKey = '3XF2G8OJ3RKRXR4V';
-        var symbol = 'MSFT'; // Replace 'AAPL' with the stock symbol you want to track
+        var symbol = 'MSFT', 'AMD', 'CRWD', 'NVDA'; // Replace 'AAPL' with the stock symbol you want to track
         var apiUrl = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=' + symbol + '&apikey=' + apiKey;
 
         function fetchStockPrice() {
