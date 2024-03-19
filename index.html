@@ -86,7 +86,7 @@
       margin-bottom: 10px; /* Add space below heading */
     }    
     
-    .stock-price {
+    .stock-prices {
       font-size: 1.2vw;
       font-family: 'Arial', sans-serif;
       color: #333;
@@ -113,41 +113,42 @@
   </div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
 <script>
-$(document).ready(function() {
-    // Replace 'YOUR_API_KEY' with your Polygon.io API key
-    var apiKey = 'DLaDi4lqORrYgykTFOVpvZF_Nfl6OXMa';
-    var symbols = ['AAPL', 'MSFT']; // List of stock symbols you want to track
+  
+ $(document).ready(function() {
+        // Replace 'YOUR_API_KEY' with your Polygon.io API key
+        var apiKey = 'YOUR_API_KEY';
+        var symbols = ['AAPL', 'MSFT', 'GOOGL']; // List of stock symbols you want to track
 
-    function fetchStockPrices() {
-        symbols.forEach(function(symbol) {
-            var apiUrl = 'https://api.polygon.io/v2/aggs/ticker/' + symbol + '/prev?unadjusted=true&apiKey=' + apiKey;
-            $.ajax({
-                url: apiUrl,
-                success: function(data) {
-                    console.log('Response for ' + symbol + ':', data);
-                    if(data && data.results && data.results.length > 0) {
-                        var price = data.results[0].c;
-                        $('#stockPrice').text(symbol + ' Price: $' + price);
-                    } else {
-                        $('#stockPrice').text('Error: No data available for ' + symbol);
+        function fetchStockPrices() {
+            symbols.forEach(function(symbol) {
+                var apiUrl = 'https://api.polygon.io/v2/aggs/ticker/' + symbol + '/prev?unadjusted=true&apiKey=' + apiKey;
+                $.ajax({
+                    url: apiUrl,
+                    success: function(data) {
+                        if(data && data.results && data.results.length > 0) {
+                            var price = data.results[0].c;
+                            $('#stockPrices').append('<div class="stock-price">' + symbol + ' Price: $' + price + '</div>');
+                        } else {
+                            $('#stockPrices').append('<div class="stock-price">Error: No data available for ' + symbol + '</div>');
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error fetching ' + symbol + ' price:', error);
+                        $('#stockPrices').append('<div class="stock-price">Error fetching ' + symbol + ' price.</div>');
                     }
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error fetching ' + symbol + ' price:', error);
-                    $('#stockPrice').text('Error fetching ' + symbol + ' price.');
-                }
+                });
             });
-        });
-    }
+        }
 
-    // Fetch stock prices initially
-    fetchStockPrices();
+        // Fetch stock prices initially
+        fetchStockPrices();
 
-    // Update stock prices every 12 hours (adjust as needed)
-    setInterval(fetchStockPrices, 12 * 60 * 60 * 1000); // 12 hours * 60 minutes * 60 seconds * 1000 milliseconds
-});
-
+        // Update stock prices every 12 hours (adjust as needed)
+        setInterval(fetchStockPrices, 12 * 60 * 60 * 1000); // 12 hours * 60 minutes * 60 seconds * 1000 milliseconds
+    });
+  
 function openResume() {
   window.location.href = 'resume.html';
 }
