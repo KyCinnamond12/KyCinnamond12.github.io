@@ -74,6 +74,8 @@
       border-radius: 10px; /* Rounded edges */
       display: flex;
       justify-content: center; /* Center horizontally */ 
+      flex-direction: column; /* Adjust to stack elements vertically */
+      padding: 20px;
     }
 
     .watch-list-heading {
@@ -81,20 +83,16 @@
       font-family: 'Georgia', sans-serif;
       color: black;
       margin: 0; /* Remove default margin */
-    }
-
-    /* Styles for the stock list */
-    .stock-list {
-      list-style-type: none; /* Remove bullet points */
-      padding: 0;
+      margin-bottom: 10px; /* Add space below heading */
+    }    
+    
+    .stock-price {
+      font-size: 1.2vw;
+      font-family: 'Arial', sans-serif;
+      color: #333;
       margin: 0;
     }
 
-    .stock-list li {
-      font-size: 18px; /* Adjust font size as needed */
-      margin-bottom: 5px; /* Adjust spacing between items */
-    }
-    
   </style>
 </head>
 <body>
@@ -110,11 +108,38 @@
   </div>
 
   <div class="right-box">
-    <h2 class="watch-list-heading">Stock Watch List</h2>  
-    <ul class="stock-list"></ul>
+    <h2 class="watch-list-heading">Stock Watch List</h2>
+    <div id="stockPrice" class="stock-price">Loading...</div>
   </div>
   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
+    $(document).ready(function() {
+        // Replace 'YOUR_API_KEY' with your Alpha Vantage API key
+        var apiKey = '3XF2G8OJ3RKRXR4V';
+        var symbol = 'MSFT'; // Replace 'AAPL' with the stock symbol you want to track
+        var apiUrl = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=' + symbol + '&apikey=' + apiKey;
+
+        function fetchStockPrice() {
+            $.ajax({
+                url: apiUrl,
+                success: function(data) {
+                    var price = data['Global Quote']['05. price'];
+                    $('#stockPrice').text('Stock Price: $' + price);
+                },
+                error: function() {
+                    $('#stockPrice').text('Error fetching stock price.');
+                }
+            });
+        }
+
+        // Fetch stock price initially
+        fetchStockPrice();
+
+        // Update stock price every 5 seconds (adjust as needed)
+        setInterval(fetchStockPrice, 12 * 60 * 60 * 1000); // 12 hours * 60 minutes * 60 seconds * 1000 milliseconds
+    });
+
     function openResume() {
       window.location.href = 'resume.html';
     }
@@ -130,34 +155,6 @@
     function openBlog() {
       window.location.href = 'blog.html';
     }
-
-    function updateStockPrices() {
-      // Replace 'YOUR_API_KEY' with your actual Alpha Vantage API key
-      const apiKey = '3XF2G8OJ3RKRXR4V';
-      // Replace 'AAPL,GOOGL,MSFT' with the symbols of the stocks you want to track
-      const symbols = 'AAPL,GOOGL,MSFT';
-      const apiUrl = `https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=${symbols}&apikey=${apiKey}`;
-
-      fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-          const stockList = document.querySelector('.stock-list');
-          stockList.innerHTML = ''; // Clear existing list items
-
-          data['Stock Quotes'].forEach(stock => {
-            const listItem = document.createElement('li');
-            listItem.textContent = `${stock['1. symbol']}: $${stock['2. price']}`;
-            stockList.appendChild(listItem);
-          });
-        })
-        .catch(error => console.log(error));
-    }
-
-    // Update stock prices initially
-    updateStockPrices();
-
-    // Update stock prices every 12 hours (twice a day)
-    setInterval(updateStockPrices, 43200000); // 43200000 milliseconds = 12 hours
 
   </script>
 </body>
