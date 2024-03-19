@@ -86,11 +86,11 @@
       margin-bottom: 10px; /* Add space below heading */
     }    
     
-    .stock-prices {
+    .stock-price {
       font-size: 1.2vw;
       font-family: 'Arial', sans-serif;
       color: #333;
-      margin: 0;
+      margin: 5px 0; /* Adjust margin between stock prices */
     }
 
   </style>
@@ -109,17 +109,17 @@
 
   <div class="right-box">
     <h2 class="watch-list-heading">Stock Watch List</h2>
-    <div id="stockPrice" class="stock-price">Loading...</div>
+    <div id="stockPrices" class="stock-prices">
+      <!-- Each stock price will be appended here -->
+    </div>
   </div>
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
-<script>
-  
- $(document).ready(function() {
+  <script>
+    $(document).ready(function() {
         // Replace 'YOUR_API_KEY' with your Polygon.io API key
         var apiKey = 'DLaDi4lqORrYgykTFOVpvZF_Nfl6OXMa';
-        var symbols = ['AAPL', 'MSFT']; // List of stock symbols you want to track
+        var symbols = ['AAPL', 'MSFT', 'GOOGL']; // List of stock symbols you want to track
 
         function fetchStockPrices() {
             symbols.forEach(function(symbol) {
@@ -127,9 +127,11 @@
                 $.ajax({
                     url: apiUrl,
                     success: function(data) {
+                        console.log('Response for ' + symbol + ':', data);
                         if(data && data.results && data.results.length > 0) {
                             var price = data.results[0].c;
-                            $('#stockPrices').append('<div class="stock-price">' + symbol + ' Price: $' + price + '</div>');
+                            var stockPriceDiv = '<div class="stock-price">' + symbol + ' Price: $' + price + '</div>';
+                            $('#stockPrices').append(stockPriceDiv);
                         } else {
                             $('#stockPrices').append('<div class="stock-price">Error: No data available for ' + symbol + '</div>');
                         }
@@ -148,23 +150,22 @@
         // Update stock prices every 12 hours (adjust as needed)
         setInterval(fetchStockPrices, 12 * 60 * 60 * 1000); // 12 hours * 60 minutes * 60 seconds * 1000 milliseconds
     });
-  
-function openResume() {
-  window.location.href = 'resume.html';
-}
 
-function openAboutMe() {
-  window.location.href = 'aboutme.html';
-}
+    function openResume() {
+      window.location.href = 'resume.html';
+    }
 
-function openExperience() {
-  window.location.href = 'Experience.html';
-}
+    function openAboutMe() {
+      window.location.href = 'aboutme.html';
+    }
 
-function openBlog() {
-  window.location.href = 'blog.html';
-}
+    function openExperience() {
+      window.location.href = 'Experience.html';
+    }
 
+    function openBlog() {
+      window.location.href = 'blog.html';
+    }
   </script>
 </body>
 </html>
