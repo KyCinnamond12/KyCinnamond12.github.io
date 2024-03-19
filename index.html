@@ -114,47 +114,55 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-    $(document).ready(function() {
-        // Replace 'YOUR_API_KEY' with your Alpha Vantage API key
-        var apiKey = '3XF2G8OJ3RKRXR4V';
-        var symbol = 'MSFT', 'AMD', 'CRWD', 'NVDA'; // Replace 'AAPL' with the stock symbol you want to track
-        var apiUrl = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=' + symbol + '&apikey=' + apiKey;
+   <script>
+$(document).ready(function() {
+    // Replace 'YOUR_API_KEY' with your Alpha Vantage API key
+    var apiKey = '3XF2G8OJ3RKRXR4V';
+    var symbols = ['AAPL', 'MSFT', 'GOOGL']; // List of stock symbols you want to track
+    var apiUrlBase = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&apikey=' + apiKey;
 
-        function fetchStockPrice() {
+    function fetchStockPrices() {
+        symbols.forEach(function(symbol) {
+            var apiUrl = apiUrlBase + '&symbol=' + symbol;
             $.ajax({
                 url: apiUrl,
                 success: function(data) {
-                    var price = data['Global Quote']['05. price'];
-                    $('#stockPrice').text('Stock Price: $' + price);
+                    if(data['Global Quote']) {
+                        var price = data['Global Quote']['05. price'];
+                        $('#stockPrice_' + symbol).text(symbol + ' Price: $' + price);
+                    } else {
+                        $('#stockPrice_' + symbol).text('Error: No data available for ' + symbol);
+                    }
                 },
                 error: function() {
-                    $('#stockPrice').text('Error fetching stock price.');
+                    $('#stockPrice_' + symbol).text('Error fetching ' + symbol + ' price.');
                 }
             });
-        }
-
-        // Fetch stock price initially
-        fetchStockPrice();
-
-        // Update stock price every 5 seconds (adjust as needed)
-        setInterval(fetchStockPrice, 12 * 60 * 60 * 1000); // 12 hours * 60 minutes * 60 seconds * 1000 milliseconds
-    });
-
-    function openResume() {
-      window.location.href = 'resume.html';
+        });
     }
 
-    function openAboutMe() {
-      window.location.href = 'aboutme.html';
-    }
+    // Fetch stock prices initially
+    fetchStockPrices();
 
-    function openExperience() {
-      window.location.href = 'Experience.html';
-    }
+    // Update stock prices every 12 hours (adjust as needed)
+    setInterval(fetchStockPrices, 12 * 60 * 60 * 1000); // 12 hours * 60 minutes * 60 seconds * 1000 milliseconds
+});
 
-    function openBlog() {
-      window.location.href = 'blog.html';
-    }
+function openResume() {
+  window.location.href = 'resume.html';
+}
+
+function openAboutMe() {
+  window.location.href = 'aboutme.html';
+}
+
+function openExperience() {
+  window.location.href = 'Experience.html';
+}
+
+function openBlog() {
+  window.location.href = 'blog.html';
+}
 
   </script>
 </body>
