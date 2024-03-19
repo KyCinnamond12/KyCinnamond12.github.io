@@ -81,7 +81,19 @@
       font-family: 'Georgia', sans-serif;
       color: black;
       margin: 0; /* Remove default margin */
-    }    
+    }
+
+    /* Styles for the stock list */
+    .stock-list {
+      list-style-type: none; /* Remove bullet points */
+      padding: 0;
+      margin: 0;
+    }
+
+    .stock-list li {
+      font-size: 18px; /* Adjust font size as needed */
+      margin-bottom: 5px; /* Adjust spacing between items */
+    }
     
   </style>
 </head>
@@ -118,10 +130,10 @@
     function openBlog() {
       window.location.href = 'blog.html';
     }
-    
+
     function updateStockPrices() {
       // Replace 'YOUR_API_KEY' with your actual Alpha Vantage API key
-      const apiKey = '3XF2G8OJ3RKRXR4V';
+      const apiKey = 'YOUR_API_KEY';
       // Replace 'AAPL,GOOGL,MSFT' with the symbols of the stocks you want to track
       const symbols = 'AAPL,GOOGL,MSFT';
       const apiUrl = `https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=${symbols}&apikey=${apiKey}`;
@@ -145,7 +157,8 @@
     updateStockPrices();
 
     // Update stock prices every 12 hours (twice a day)
-    setInterval(updateStockPrices, 43200000); // 43200000 milliseconds = 12 hours  
+    setInterval(updateStockPrices, 43200000); // 43200000 milliseconds = 12 hours
+
   </script>
 </body>
 </html>
