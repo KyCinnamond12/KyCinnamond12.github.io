@@ -148,7 +148,7 @@
         fetchStockPrices();
 
         // Update stock prices every 12 hours (adjust as needed)
-        setInterval(fetchStockPrices, 12 * 60 * 60 * 1000); // 12 hours * 60 minutes * 60 seconds * 1000 milliseconds
+        setInterval(fetchStockPrices, 60 * 60 * 1000); // 60 minutes * 60 seconds * 1000 milliseconds
     });
 
     function openResume() {
