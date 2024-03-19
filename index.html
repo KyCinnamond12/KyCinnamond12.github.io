@@ -115,20 +115,20 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
    <script>
+<script>
 $(document).ready(function() {
-    // Replace 'YOUR_API_KEY' with your Alpha Vantage API key
-    var apiKey = '3XF2G8OJ3RKRXR4V';
+    // Replace 'YOUR_API_KEY' with your Polygon.io API key
+    var apiKey = 'DLaDi4lqORrYgykTFOVpvZF_Nfl6OXMa';
     var symbols = ['AAPL', 'MSFT', 'GOOGL']; // List of stock symbols you want to track
-    var apiUrlBase = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&apikey=' + apiKey;
 
     function fetchStockPrices() {
         symbols.forEach(function(symbol) {
-            var apiUrl = apiUrlBase + '&symbol=' + symbol;
+            var apiUrl = 'https://api.polygon.io/v2/aggs/ticker/' + symbol + '/prev?unadjusted=true&apiKey=' + apiKey;
             $.ajax({
                 url: apiUrl,
                 success: function(data) {
-                    if(data['Global Quote']) {
-                        var price = data['Global Quote']['05. price'];
+                    if(data && data.results && data.results.length > 0) {
+                        var price = data.results[0].c;
                         $('#stockPrice_' + symbol).text(symbol + ' Price: $' + price);
                     } else {
                         $('#stockPrice_' + symbol).text('Error: No data available for ' + symbol);
@@ -163,6 +163,8 @@ function openExperience() {
 function openBlog() {
   window.location.href = 'blog.html';
 }
+
+</script>
 
   </script>
 </body>
