@@ -98,7 +98,8 @@
   </div>
 
   <div class="right-box">
-    <h2 class="watch-list-heading">Stock Watch List</h2>    
+    <h2 class="watch-list-heading">Stock Watch List</h2>  
+    <ul class="stock-list"></ul>
   </div>
   
   <script>
@@ -117,6 +118,42 @@
     function openBlog() {
       window.location.href = 'blog.html';
     }
+
+   function updateStockPrices() {
+    // Check if current time is within the update times (9:00 AM and 4:00 PM)
+    const currentTime = new Date();
+    const updateTimes = [9, 16]; // 9:00 AM and 4:00 PM
+
+    // Check if current hour is in the update times array
+    if (updateTimes.includes(currentTime.getHours())) {
+    // Replace 'YOUR_API_KEY' with your actual API key
+      const apiKey = 'YOUR_API_KEY';
+    // Replace 'AAPL,GOOGL,MSFT' with the symbols of the stocks you want to track
+      const symbols = 'AAPL,GOOGL,MSFT';
+      const apiUrl = `https://api.marketstack.com/v1/tickers/${symbols}/intraday/latest?access_key=${apiKey}`;
+
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          const stockList = document.querySelector('.stock-list');
+          stockList.innerHTML = ''; // Clear existing list items
+
+          data.data.forEach(stock => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${stock.symbol}: $${stock.close}`;
+            stockList.appendChild(listItem);
+          });
+        })
+        .catch(error => console.log(error));
+    }
+  }
+
+  // Update stock prices initially
+  updateStockPrices();
+
+  // Update stock prices every hour
+  setInterval(updateStockPrices, 3600000); // 3600000 milliseconds = 1 hour    
+    
   </script>
 </body>
 </html>
