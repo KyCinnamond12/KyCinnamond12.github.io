@@ -125,15 +125,17 @@ $(document).ready(function() {
             $.ajax({
                 url: apiUrl,
                 success: function(data) {
+                    console.log('Response for ' + symbol + ':', data);
                     if(data && data.results && data.results.length > 0) {
                         var price = data.results[0].c;
-                        $('#stockPrice_' + symbol).text(symbol + ' Price: $' + price);
+                        $('#stockPrice').text(symbol + ' Price: $' + price);
                     } else {
-                        $('#stockPrice_' + symbol).text('Error: No data available for ' + symbol);
+                        $('#stockPrice').text('Error: No data available for ' + symbol);
                     }
                 },
-                error: function() {
-                    $('#stockPrice_' + symbol).text('Error fetching ' + symbol + ' price.');
+                error: function(xhr, status, error) {
+                    console.error('Error fetching ' + symbol + ' price:', error);
+                    $('#stockPrice').text('Error fetching ' + symbol + ' price.');
                 }
             });
         });
