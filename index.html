@@ -117,13 +117,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
-        // Replace 'YOUR_API_KEY' with your Polygon.io API key
-        var apiKey = 'DLaDi4lqORrYgykTFOVpvZF_Nfl6OXMa';
+        // Replace 'YOUR_API_KEY' with your Profit.com API key
+        var apiKey = 'YOUR_PROFIT_DOT_COM_API_KEY';
         var symbols = ['AAPL', 'MSFT', 'GOOGL']; // List of stock symbols you want to track
 
         function fetchStockPrices() {
             symbols.forEach(function(symbol) {
-                var apiUrl = 'https://api.polygon.io/v2/aggs/ticker/' + symbol + '/prev?unadjusted=true&apiKey=' + apiKey;
+                var apiUrl = 'https://api.profit.com/v2/aggs/ticker/' + symbol + '/prev?unadjusted=true&apiKey=' + apiKey;
                 $.ajax({
                     url: apiUrl,
                     success: function(data) {
