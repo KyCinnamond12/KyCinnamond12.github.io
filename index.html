@@ -78,50 +78,6 @@
     </div>
   </div>
 
-  <div class="right-box">
-    <h2 class="watch-list-heading">Stock Watch List</h2>
-    <div id="stockPrices" class="stock-prices">
-      <!-- Each stock price will be appended here -->
-    </div>
-  </div>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-        // Replace 'YOUR_API_KEY' with your Profit.com API key
-        var apiKey = '9e6b33d138514e19ad05ae3a789587cb';
-        var symbols = ['AAPL', 'MSFT']; // List of stock symbols you want to track
-
-        function fetchStockPrices() {
-            symbols.forEach(function(symbol) {
-                var apiUrl = 'https://api.profit.com/' + symbol + '/prev?unadjusted=true&apiKey=' + apiKey;
-                $.ajax({
-                    url: apiUrl,
-                    success: function(data) {
-                        console.log('Response for ' + symbol + ':', data);
-                        if(data && data.results && data.results.length > 0) {
-                            var price = data.results[0].c;
-                            var stockPriceDiv = '<div class="stock-price">' + symbol + ' Price: $' + price + '</div>';
-                            $('#stockPrices').append(stockPriceDiv);
-                        } else {
-                            $('#stockPrices').append('<div class="stock-price">Error: No data available for ' + symbol + '</div>');
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Error fetching ' + symbol + ' price:', error);
-                        $('#stockPrices').append('<div class="stock-price">Error fetching ' + symbol + ' price.</div>');
-                    }
-                });
-            });
-        }
-
-        // Fetch stock prices initially
-        fetchStockPrices();
-
-        // Update stock prices every 12 hours (adjust as needed)
-        setInterval(fetchStockPrices, 60 * 60 * 1000); // 60 minutes * 60 seconds * 1000 milliseconds
-    });
-
     function openResume() {
       window.location.href = 'resume.html';
     }
