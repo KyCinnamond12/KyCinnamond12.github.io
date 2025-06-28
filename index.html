@@ -104,6 +104,40 @@
       transform: translateY(-2px);
     }
 
+    /* Contact Modal Styles */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2000;
+    }
+
+    .contact-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 500px;
+      background-color: rgba(255, 255, 255, 0.95);
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+      z-index: 3000;
+      text-align: left;
+    }
+
+    .contact-modal h3 {
+      text-align: center;
+      margin-top: 0;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -142,9 +176,9 @@
     <h1>Kyle Cinnamond</h1>
     <div class="nav-buttons">
       <button onclick="openResume()">Resume</button>
-      <button onclick="openAboutMe()">About Me</button>
       <button onclick="openExperience()">Experience</button>
       <button onclick="openBlog()">Blog</button>
+      <button onclick="toggleContactModal()">Contact Me</button>
     </div>
   </div>
 
@@ -152,8 +186,19 @@
   <section class="hero">
     <h2>Welcome to My Personal Website</h2>
     <p>I'm Kyle Cinnamond, passionate about finance, technology, and lifelong learning. Explore my background, experience, and thoughts on the industries that inspire me.</p>
-    <button class="cta-button" onclick="openAboutMe()">Learn More About Me</button>
+    <button class="cta-button" onclick="openResume()">View My Resume</button>
   </section>
+
+  <!-- Contact Modal Overlay -->
+  <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
+  <div class="contact-modal" id="contactModal">
+    <div onclick="event.stopPropagation();">
+      <h3>Contact Information</h3>
+      <p>Email: <a href="mailto:Kycinnamond@gmail.com">Kycinnamond@gmail.com</a></p>
+      <p>Phone: +1 (610)-732-8556</p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/kyle-cinnamond-253616227" target="_blank">LinkedIn Profile</a></p>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -166,16 +211,20 @@
       window.location.href = 'resume.html';
     }
 
-    function openAboutMe() {
-      window.location.href = 'aboutme.html';
-    }
-
     function openExperience() {
       window.location.href = 'Experience.html';
     }
 
     function openBlog() {
       window.location.href = 'blog.html';
+    }
+
+    function toggleContactModal() {
+      var overlay = document.getElementById('overlay');
+      var modal = document.getElementById('contactModal');
+      var isVisible = overlay.style.display === 'block';
+      overlay.style.display = isVisible ? 'none' : 'block';
+      modal.style.display = isVisible ? 'none' : 'block';
     }
   </script>
 </body>
