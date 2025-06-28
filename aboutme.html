@@ -49,93 +49,68 @@
       color: #005c99;
     }
 
-    .page-title {
-      text-align: center;
-      font-size: 36px;
-      font-weight: 500;
-      margin: 30px 0 10px;
-      color: #222;
-    }
-
-    .title-divider {
-      width: 200px;
-      height: 3px;
+    .hero {
       background: #007acc;
-      margin: 0 auto 30px;
-      border-radius: 2px;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
     }
 
-    .container {
+    .hero h1 {
+      margin: 0;
+      font-size: 48px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .cards {
       display: flex;
       flex-wrap: wrap;
-      gap: 40px;
-      padding: 0 20px 40px;
+      gap: 20px;
+      justify-content: center;
       max-width: 1200px;
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
-
-    .left, .right {
-      flex: 1 1 400px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     .card {
-      background: #ffffff;
+      background: white;
       border-radius: 8px;
-      padding: 20px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .card h3 {
-      color: #007acc;
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    .card p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .from-images {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .from-images img {
-      width: 48%;
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .education-img {
-      width: 100%;
-      border-radius: 6px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .hobbies-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .hobby {
-      flex: 1 1 40%;
-      background: #e6f3ff;
-      color: #007acc;
-      border-radius: 6px;
+      flex: 1 1 250px;
+      max-width: 280px;
       text-align: center;
-      padding: 10px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #007acc;
       font-weight: 500;
+    }
+
+    .card-content p {
+      font-size: 16px;
+      line-height: 1.4;
     }
 
     footer {
@@ -148,7 +123,6 @@
       margin-top: 40px;
     }
 
-    /* Contact Modal */
     .overlay {
       display: none;
       position: fixed;
@@ -156,7 +130,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0,0,0,0.5);
       z-index: 2000;
     }
 
@@ -172,7 +146,7 @@
       color: black;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
       z-index: 3000;
       text-align: left;
     }
@@ -183,19 +157,12 @@
       color: #007acc;
     }
 
-    /* Responsive */
-    @media (max-width: 800px) {
-      .container {
-        flex-direction: column;
-      }
-      .hobbies-list {
-        justify-content: center;
-      }
-    }
-
     @media (max-width: 600px) {
-      .page-title {
-        font-size: 28px;
+      .hero h1 {
+        font-size: 32px;
+      }
+      .hero p {
+        font-size: 18px;
       }
     }
   </style>
@@ -214,41 +181,38 @@
   </div>
 </div>
 
-<div class="page-title">About Me</div>
-<div class="title-divider"></div>
+<div class="hero">
+  <h1>Hi, I'm Kyle</h1>
+  <p>Exploring, learning, and building in Pennsylvania and beyond.</p>
+</div>
 
-<div class="container">
-  <!-- Left Column -->
-  <div class="left">
-    <div class="card">
-      <h3>About Me</h3>
-      <p>Hello! I'm Kyle Cinnamond, originally from Pennsylvania. I'm passionate about learning, creating, and connecting with people and ideas that make an impact.</p>
-    </div>
-    <div class="card">
+<div class="cards">
+  <div class="card">
+    <img src="Where I am From.png" alt="Where I'm From">
+    <div class="card-content">
       <h3>Where I'm From</h3>
-      <div class="from-images">
-        <img src="WestChester.jpg" alt="West Chester, PA">
-        <img src="Pittsburgh.jpg" alt="Pittsburgh, PA">
-      </div>
-      <p style="margin-top:15px;">I grew up in West Chester, PA, and later moved to Pittsburgh, PA, where I've continued my journey personally and professionally.</p>
+      <p>Originally from West Chester, PA, and now living in Pittsburgh. I love the community and energy of both places.</p>
     </div>
   </div>
-
-  <!-- Right Column -->
-  <div class="right">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="University of Pittsburgh" class="education-img">
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="University of Pittsburgh">
+    <div class="card-content">
       <h3>Education</h3>
-      <p>I attended the University of Pittsburgh, where I developed my skills and met incredible people who inspired me.</p>
+      <p>University of Pittsburgh graduate, where I built my foundation in business and technology.</p>
     </div>
-    <div class="card">
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Hobbies">
+    <div class="card-content">
       <h3>Hobbies</h3>
-      <div class="hobbies-list">
-        <div class="hobby">Hiking</div>
-        <div class="hobby">Basketball</div>
-        <div class="hobby">Cooking</div>
-        <div class="hobby">Investing</div>
-      </div>
+      <p>Enjoy hiking, cooking, and following the latest trends in investing and technology.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80" alt="Values">
+    <div class="card-content">
+      <h3>Values</h3>
+      <p>Driven by curiosity, authenticity, and the belief in lifelong learning.</p>
     </div>
   </div>
 </div>
