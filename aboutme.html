@@ -143,18 +143,14 @@ footer {
   justify-content: flex-start;
   align-items: center;
 }
-.modal-content {
-  width: 100%;
-}
-.modal img {
-  width: auto;
+.modal-content img {
+  display: block;
+  margin: 0 auto 15px auto;
   max-width: 100%;
   height: auto;
-  max-height: 50vh;
-  object-fit: contain;
-  border-radius: 6px;
-  margin-bottom: 15px;
-  display: block;
+}
+.modal-content .cfa-logo {
+  max-width: 250px;
 }
 .modal h3 {
   margin-top: 0;
@@ -240,25 +236,25 @@ footer {
   </div>
 
   <div class="cards">
-    <div class="card" onclick="openModal('Where I\'m From','<img src=&quot;https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&amp;fit=crop&amp;w=800&amp;q=80&quot; alt=&quot;Where I\'m From&quot;><p>Originally from West Chester, PA, and now living in Pittsburgh. I love the community and energy of both places.</p>')">
+    <div class="card" onclick="openModal('Where I\'m From', document.getElementById('whereContent').innerHTML)">
       <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80" alt="Where I'm From">
       <div class="card-content">
         <h3>Where I'm From</h3>
       </div>
     </div>
-    <div class="card" onclick="openModal('Education','<img src=&quot;pitt.png&quot; alt=&quot;University of Pittsburgh&quot;><h4>University of Pittsburgh</h4><p>I earned my Bachelor’s Degree in Economics with a Business concentration from the University of Pittsburgh, graduating in 2024 with a GPA of 3.61. My coursework included Data Analysis, Statistics, Microeconomics, Macroeconomics, Financial Accounting, and specialized classes in Economic Policy and Investment Management.</p><img src=&quot;CFA.PNG&quot; alt=&quot;CFA Logo&quot; style=&quot;max-width:150px;margin-top:20px;&quot;><h4>CFA Program</h4><p>Passed Level I of the Chartered Financial Analyst (CFA) Exam in May 2025, underscoring my commitment to professional development and rigorous financial training.</p>')">
+    <div class="card" onclick="openModal('Education', document.getElementById('educationContent').innerHTML)">
       <img src="pitt.png" alt="Education">
       <div class="card-content">
         <h3>Education</h3>
       </div>
     </div>
-    <div class="card" onclick="openModal('Hobbies','<img src=&quot;https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=800&amp;q=80&quot; alt=&quot;Hobbies&quot;><p>Enjoy hiking, cooking, and following the latest trends in investing and technology.</p>')">
+    <div class="card" onclick="openModal('Hobbies', document.getElementById('hobbiesContent').innerHTML)">
       <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Hobbies">
       <div class="card-content">
         <h3>Hobbies</h3>
       </div>
     </div>
-    <div class="card" onclick="openModal('Values','<img src=&quot;https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&amp;fit=crop&amp;w=800&amp;q=80&quot; alt=&quot;Values&quot;><p>Driven by curiosity, authenticity, and the belief in lifelong learning.</p>')">
+    <div class="card" onclick="openModal('Values', document.getElementById('valuesContent').innerHTML)">
       <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80" alt="Values">
       <div class="card-content">
         <h3>Values</h3>
@@ -277,6 +273,30 @@ footer {
     <h3 id="modalTitle"></h3>
     <div id="modalContent" class="modal-content"></div>
   </div>
+</div>
+
+<div id="whereContent" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80" alt="Where I'm From">
+  <p>Originally from West Chester, PA, and now living in Pittsburgh. I love the community and energy of both places.</p>
+</div>
+
+<div id="educationContent" style="display:none;">
+  <img src="pitt.png" alt="University of Pittsburgh">
+  <h4>University of Pittsburgh</h4>
+  <p>I earned my Bachelor’s Degree in Economics with a Business concentration from the University of Pittsburgh, graduating in 2024 with a GPA of 3.61. My coursework included Data Analysis, Statistics, Microeconomics, Macroeconomics, Financial Accounting, and specialized classes in Economic Policy and Investment Management.</p>
+  <img src="CFA.PNG" alt="CFA Logo" class="cfa-logo">
+  <h4>CFA Program</h4>
+  <p>Passed Level I of the Chartered Financial Analyst (CFA) Exam in May 2025, underscoring my commitment to professional development and rigorous financial training.</p>
+</div>
+
+<div id="hobbiesContent" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Hobbies">
+  <p>Enjoy hiking, cooking, and following the latest trends in investing and technology.</p>
+</div>
+
+<div id="valuesContent" style="display:none;">
+  <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80" alt="Values">
+  <p>Driven by curiosity, authenticity, and the belief in lifelong learning.</p>
 </div>
 
 <div class="contact-overlay" id="contactOverlay" onclick="toggleContact()"></div>
@@ -309,4 +329,3 @@ function toggleContact() {
 
 </body>
 </html>
-
