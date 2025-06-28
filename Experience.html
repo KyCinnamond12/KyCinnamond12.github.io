@@ -22,15 +22,10 @@
       padding: 15px 20px;
     }
 
-    .nav-left, .nav-center, .nav-right {
+    .nav-left, .nav-right {
       display: flex;
       align-items: center;
       gap: 10px;
-    }
-
-    .nav-center {
-      justify-content: center;
-      flex: 1;
     }
 
     .nav-left a, .nav-right a {
@@ -46,10 +41,19 @@
       background-color: #555;
     }
 
-    .nav-center h1 {
-      margin: 0;
-      font-size: 28px;
-      white-space: nowrap;
+    .page-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 500;
+      margin: 30px 0 10px;
+    }
+
+    .title-divider {
+      width: 60px;
+      height: 3px;
+      background: #333;
+      margin: 0 auto 30px;
+      border-radius: 2px;
     }
 
     .section {
@@ -171,12 +175,9 @@
       .text {
         min-height: auto;
       }
-      .nav-left, .nav-center, .nav-right {
+      .nav-left, .nav-right {
         flex: 1 1 100%;
         justify-content: center;
-      }
-      .nav-center {
-        order: -1;
       }
     }
 
@@ -190,6 +191,9 @@
       .text {
         font-size: 16px;
       }
+      .page-title {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
@@ -202,13 +206,13 @@
     <a href="blog.html">Blog</a>
     <a href="aboutme.html">About Me</a>
   </div>
-  <div class="nav-center">
-    <h1>Work Experience</h1>
-  </div>
   <div class="nav-right">
     <a href="#" onclick="toggleContactModal()">Contact Me</a>
   </div>
 </div>
+
+<div class="page-title">Work Experience</div>
+<div class="title-divider"></div>
 
 <section class="section">
   <div class="pdf">
