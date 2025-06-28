@@ -65,6 +65,15 @@
       border-radius: 2px;
     }
 
+    .intro {
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
     .section {
       display: flex;
       flex-wrap: wrap;
@@ -82,24 +91,25 @@
     .section-content {
       flex: 1 1 400px;
       max-width: 500px;
-      text-align: center;
     }
 
     .section-content h3 {
       color: #007acc;
       margin-bottom: 15px;
       font-weight: 500;
+      text-align: left;
     }
 
     .section-content p {
       font-size: 18px;
       line-height: 1.6;
       margin: 0;
+      text-align: left;
     }
 
     .section img {
-      flex: 1 1 300px;
-      max-width: 400px;
+      flex: 1 1 400px;
+      max-width: 600px;
       width: 100%;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -155,6 +165,9 @@
       .section {
         flex-direction: column;
       }
+      .section-content p, .section-content h3 {
+        text-align: center;
+      }
     }
 
     @media (max-width: 600px) {
@@ -181,29 +194,25 @@
 <div class="page-title">About Me</div>
 <div class="title-divider"></div>
 
-<!-- Intro -->
-<div class="section alt">
-  <div class="section-content">
-    <h3>Hello!</h3>
-    <p>I'm Kyle Cinnamond, a passionate learner and professional dedicated to growth and making an impact.</p>
-  </div>
+<div class="intro">
+  <p>Hello! I'm Kyle Cinnamond, originally from Pennsylvania. I'm passionate about learning, creating, and connecting with people and ideas that make an impact.</p>
 </div>
 
-<!-- Where I'm From -->
+<!-- Where I'm From Section -->
 <div class="section">
   <div class="section-content">
     <h3>Where I'm From</h3>
-    <p>I grew up in West Chester, PA, and later moved to Pittsburgh, PA, where I've built my career and life.</p>
+    <p>I grew up in West Chester, PA, surrounded by community and opportunity. In recent years, I moved to Pittsburgh, PA to continue my journey—both personally and professionally. Pittsburgh has been an incredible place to grow and learn.</p>
   </div>
   <img src="Where I am From.png" alt="Where I'm From">
 </div>
 
-<!-- Education -->
+<!-- Education Section -->
 <div class="section alt">
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="University of Pittsburgh">
   <div class="section-content">
     <h3>Education</h3>
-    <p>I studied at the University of Pittsburgh, where I developed a strong foundation in my field and engaged with a vibrant campus community.</p>
+    <p>I attended the University of Pittsburgh, where I expanded my horizons, met inspiring mentors and friends, and built the skills I carry with me today.</p>
   </div>
 </div>
 
