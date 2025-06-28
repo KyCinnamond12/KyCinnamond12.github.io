@@ -58,7 +58,7 @@
       padding: 40px 20px;
       display: flex;
       flex-wrap: wrap;
-      align-items: stretch;
+      align-items: flex-start;
       gap: 40px;
       box-sizing: border-box;
     }
@@ -74,8 +74,13 @@
       flex-basis: 100%;
       font-size: 28px;
       color: #222;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
+      margin: 0 0 10px;
+      text-align: center;
+    }
+
+    .divider {
+      width: 100%;
+      border-top: 1px solid #ccc;
       margin-bottom: 20px;
     }
 
@@ -83,10 +88,6 @@
       flex: 1 1 500px;
       font-size: 18px;
       line-height: 1.6;
-      min-height: 450px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       text-align: center;
     }
 
@@ -210,12 +211,12 @@
 </div>
 
 <section class="section">
-  <h2>Princeton Capital Management</h2>
   <div class="pdf">
     <iframe src="AIwhitepaper.pdf#page=1&view=Fit&toolbar=0"></iframe>
   </div>
   <div class="text">
     <h5>Artificial Intelligence White Paper Project</h5>
+    <div class="divider"></div>
     <p>The field of Artificial Intelligence has swiftly emerged as one of 
       the world's fastest-growing industries, leaving many unfamiliar with its nature and intricacies. This Artificial 
       Intelligence Investment Presentation aims to answer four major questions: What is it, How Do You Play, Who are the 
@@ -239,6 +240,7 @@
   </div>
   <div class="text">
     <h4>Banking Portfolio Look Book Project</h4>
+    <div class="divider"></div>
     <p>The "Portfolio Look Book" serves as a visual resource
       for clients interested in the Banking Fund, offering a comprehensive overview of the Long Investments 
       within each portfolio. The presentation highlights crucial metrics carefully selected to provide a 
@@ -259,6 +261,7 @@
   </div>
   <div class="text">
     <h6>First of Long Island Bank 10-Year Projection Project</h6>
+    <div class="divider"></div>
     <p>This is a filler paragraph. I am having a wonderful day, we went to the Pitt
       basketball game and got free Pitt Pit Vipers and won the game. It was our last home game of our college career so you know we all
       had to put the whole DraftKings balance on the spread at -6.5. Of course we hit that thanks to the GOAT Blake Hinson (if only he
