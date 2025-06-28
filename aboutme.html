@@ -66,47 +66,41 @@
     }
 
     .section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
       box-sizing: border-box;
+      gap: 40px;
     }
 
-    .section img {
-      display: block;
-      max-width: 300px;
-      width: 80%;
-      height: auto;
-      border-radius: 8px;
-      margin: 30px auto;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    .section.alt {
+      background-color: #ffffff;
     }
 
-    .section h3, .section h4, .section h5, .section h6 {
+    .section-content {
+      flex: 1 1 400px;
+      max-width: 500px;
       text-align: center;
+    }
+
+    .section-content h3 {
       color: #007acc;
-      margin: 20px 0 10px;
+      margin-bottom: 15px;
       font-weight: 500;
     }
 
-    .from-container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin: 20px 0;
+    .section-content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0;
     }
 
-    .from-container h4, .from-container h5 {
-      flex: 1 1 200px;
-      margin: 0 10px;
-      text-align: center;
-      font-weight: 400;
-    }
-
-    .from-image {
-      display: block;
-      max-width: 90%;
-      margin: 20px auto;
+    .section img {
+      flex: 1 1 300px;
+      max-width: 400px;
+      width: 100%;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
@@ -157,14 +151,13 @@
     }
 
     /* Responsive */
-    @media (max-width: 600px) {
-      .from-container {
+    @media (max-width: 800px) {
+      .section {
         flex-direction: column;
-        align-items: center;
       }
-      .from-container h4, .from-container h5 {
-        margin: 10px 0;
-      }
+    }
+
+    @media (max-width: 600px) {
       .page-title {
         font-size: 28px;
       }
@@ -188,17 +181,30 @@
 <div class="page-title">About Me</div>
 <div class="title-divider"></div>
 
-<div class="section">
-  <img src="TOAD.png" alt="Your Image">
-
-  <h6>Quick Facts</h6>
-
-  <h3>Where I'm From</h3>
-  <div class="from-container">
-    <h4>West Chester, PA</h4>
-    <h5>Pittsburgh, PA</h5>
+<!-- Intro -->
+<div class="section alt">
+  <div class="section-content">
+    <h3>Hello!</h3>
+    <p>I'm Kyle Cinnamond, a passionate learner and professional dedicated to growth and making an impact.</p>
   </div>
-  <img class="from-image" src="Where I am From.png" alt="Where I'm From">
+</div>
+
+<!-- Where I'm From -->
+<div class="section">
+  <div class="section-content">
+    <h3>Where I'm From</h3>
+    <p>I grew up in West Chester, PA, and later moved to Pittsburgh, PA, where I've built my career and life.</p>
+  </div>
+  <img src="Where I am From.png" alt="Where I'm From">
+</div>
+
+<!-- Education -->
+<div class="section alt">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="University of Pittsburgh">
+  <div class="section-content">
+    <h3>Education</h3>
+    <p>I studied at the University of Pittsburgh, where I developed a strong foundation in my field and engaged with a vibrant campus community.</p>
+  </div>
 </div>
 
 <footer>
