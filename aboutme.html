@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Me</title>
   <style>
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f8f9fb;
       color: #333;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
     }
 
     .navbar {
@@ -47,6 +53,10 @@
       background-color: rgba(0,122,204,0.15);
       border: 1px solid rgba(0,122,204,0.5);
       color: #005c99;
+    }
+
+    main {
+      flex: 1;
     }
 
     .hero {
@@ -116,7 +126,6 @@
       color: #888;
       font-size: 14px;
       border-top: 1px solid #ddd;
-      margin-top: 40px;
     }
 
     .overlay-modal {
@@ -239,37 +248,39 @@
   </div>
 </div>
 
-<div class="hero">
-  <h1>Hi, I'm Kyle</h1>
-  <p>Exploring, learning, and building in Pennsylvania and beyond.</p>
-</div>
+<main>
+  <div class="hero">
+    <h1>Hi, I'm Kyle</h1>
+    <p>Exploring, learning, and building in Pennsylvania and beyond.</p>
+  </div>
 
-<div class="cards">
-  <div class="card" onclick="openModal('Where I\'m From','Where I am From.png','Originally from West Chester, PA, and now living in Pittsburgh. I love the community and energy of both places.')">
-    <img src="Where I am From.png" alt="Where I'm From">
-    <div class="card-content">
-      <h3>Where I'm From</h3>
+  <div class="cards">
+    <div class="card" onclick="openModal('Where I\'m From','Where I am From.png','Originally from West Chester, PA, and now living in Pittsburgh. I love the community and energy of both places.')">
+      <img src="Where I am From.png" alt="Where I'm From">
+      <div class="card-content">
+        <h3>Where I'm From</h3>
+      </div>
+    </div>
+    <div class="card" onclick="openModal('Education','https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg','University of Pittsburgh graduate, where I built my foundation in business and technology.')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="Education">
+      <div class="card-content">
+        <h3>Education</h3>
+      </div>
+    </div>
+    <div class="card" onclick="openModal('Hobbies','https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80','Enjoy hiking, cooking, and following the latest trends in investing and technology.')">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Hobbies">
+      <div class="card-content">
+        <h3>Hobbies</h3>
+      </div>
+    </div>
+    <div class="card" onclick="openModal('Values','https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80','Driven by curiosity, authenticity, and the belief in lifelong learning.')">
+      <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80" alt="Values">
+      <div class="card-content">
+        <h3>Values</h3>
+      </div>
     </div>
   </div>
-  <div class="card" onclick="openModal('Education','https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg','University of Pittsburgh graduate, where I built my foundation in business and technology.')">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="Education">
-    <div class="card-content">
-      <h3>Education</h3>
-    </div>
-  </div>
-  <div class="card" onclick="openModal('Hobbies','https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80','Enjoy hiking, cooking, and following the latest trends in investing and technology.')">
-    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Hobbies">
-    <div class="card-content">
-      <h3>Hobbies</h3>
-    </div>
-  </div>
-  <div class="card" onclick="openModal('Values','https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80','Driven by curiosity, authenticity, and the belief in lifelong learning.')">
-    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80" alt="Values">
-    <div class="card-content">
-      <h3>Values</h3>
-    </div>
-  </div>
-</div>
+</main>
 
 <footer>
   © 2025 Kyle Cinnamond. All rights reserved.
