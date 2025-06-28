@@ -67,61 +67,46 @@
       margin-top: 10px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
+      justify-content: center;
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
     }
 
-    .box {
+    .card {
       background: white;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      flex: 1 1 250px;
+      max-width: 280px;
+      text-align: center;
       overflow: hidden;
+      transition: transform 0.3s;
       cursor: pointer;
-      transition: transform 0.3s, max-height 0.5s ease, padding 0.3s;
-      max-height: 60px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
       padding: 20px;
     }
 
-    .box.active {
-      max-height: 500px;
-      padding: 20px;
-    }
-
-    .box h3 {
-      margin: 0;
+    .card-content h3 {
+      margin-top: 0;
       color: #007acc;
       font-weight: 500;
-      text-align: center;
-    }
-
-    .box-content {
-      margin-top: 15px;
-      display: none;
-      text-align: center;
-    }
-
-    .box.active .box-content {
-      display: block;
-    }
-
-    .box-content img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .box-content p {
-      font-size: 16px;
-      line-height: 1.4;
-      margin: 0;
     }
 
     footer {
@@ -141,31 +126,56 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0,0,0,0.7);
       z-index: 2000;
-    }
-
-    .contact-modal {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      max-width: 500px;
-      background-color: #ffffff;
-      color: black;
+      justify-content: center;
+      align-items: center;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0,0,0,0.3);
-      z-index: 3000;
-      text-align: left;
+      box-sizing: border-box;
     }
 
-    .contact-modal h3 {
+    .modal {
+      background: #ffffff;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
       text-align: center;
+      position: relative;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .modal h3 {
       margin-top: 0;
       color: #007acc;
+    }
+
+    .modal p {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      color: #888;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95);}
+      to { opacity: 1; transform: scale(1);}
     }
 
     @media (max-width: 600px) {
@@ -197,33 +207,29 @@
   <p>Exploring, learning, and building in Pennsylvania and beyond.</p>
 </div>
 
-<div class="grid">
-  <div class="box" onclick="toggleBox(this)">
-    <h3>Where I'm From</h3>
-    <div class="box-content">
-      <img src="Where I am From.png" alt="Where I'm From">
-      <p>Originally from West Chester, PA, and now living in Pittsburgh. I love the community and energy of both places.</p>
+<div class="cards">
+  <div class="card" onclick="openModal('Where I\'m From','Where I am From.png','Originally from West Chester, PA, and now living in Pittsburgh. I love the community and energy of both places.')">
+    <img src="Where I am From.png" alt="Where I'm From">
+    <div class="card-content">
+      <h3>Where I'm From</h3>
     </div>
   </div>
-  <div class="box" onclick="toggleBox(this)">
-    <h3>Education</h3>
-    <div class="box-content">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="University of Pittsburgh">
-      <p>University of Pittsburgh graduate, where I built my foundation in business and technology.</p>
+  <div class="card" onclick="openModal('Education','https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg','University of Pittsburgh graduate, where I built my foundation in business and technology.')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="Education">
+    <div class="card-content">
+      <h3>Education</h3>
     </div>
   </div>
-  <div class="box" onclick="toggleBox(this)">
-    <h3>Hobbies</h3>
-    <div class="box-content">
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Hobbies">
-      <p>Enjoy hiking, cooking, and following the latest trends in investing and technology.</p>
+  <div class="card" onclick="openModal('Hobbies','https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80','Enjoy hiking, cooking, and following the latest trends in investing and technology.')">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Hobbies">
+    <div class="card-content">
+      <h3>Hobbies</h3>
     </div>
   </div>
-  <div class="box" onclick="toggleBox(this)">
-    <h3>Values</h3>
-    <div class="box-content">
-      <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80" alt="Values">
-      <p>Driven by curiosity, authenticity, and the belief in lifelong learning.</p>
+  <div class="card" onclick="openModal('Values','https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80','Driven by curiosity, authenticity, and the belief in lifelong learning.')">
+    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80" alt="Values">
+    <div class="card-content">
+      <h3>Values</h3>
     </div>
   </div>
 </div>
@@ -232,7 +238,16 @@
   © 2025 Kyle Cinnamond. All rights reserved.
 </footer>
 
-<div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
+<div class="overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation();">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="">
+    <h3 id="modalTitle"></h3>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<div class="overlay" id="contactOverlay" onclick="toggleContactModal()"></div>
 <div class="contact-modal" id="contactModal">
   <div onclick="event.stopPropagation();">
     <h3>Contact Information</h3>
@@ -244,21 +259,22 @@
 
 <script>
 function toggleContactModal() {
-  var overlay = document.getElementById('overlay');
-  var modal = document.getElementById('contactModal');
-  var isVisible = overlay.style.display === 'block';
+  const overlay = document.getElementById('contactOverlay');
+  const modal = document.getElementById('contactModal');
+  const isVisible = overlay.style.display === 'block';
   overlay.style.display = isVisible ? 'none' : 'block';
   modal.style.display = isVisible ? 'none' : 'block';
 }
 
-function toggleBox(clickedBox) {
-  document.querySelectorAll('.box').forEach(box => {
-    if (box === clickedBox) {
-      box.classList.toggle('active');
-    } else {
-      box.classList.remove('active');
-    }
-  });
+function openModal(title, imgSrc, text) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalImage').src = imgSrc;
+  document.getElementById('modalText').textContent = text;
+  document.getElementById('modalOverlay').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').style.display = 'none';
 }
 </script>
 
