@@ -1,291 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Experience</title>
-    <style>
-        body {
-            background-color: rgb(242, 242, 242);
-            margin: 0;
-            font-family: 'Rockwell', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fb;
+      color: #333;
+    }
 
-        h1 {
-            font-size: 3.5vw;
-            text-align: center;
-            padding: 30px;
-            margin: 0;
-        }
+    .navbar {
+      background-color: #ffffff;
+      color: #007acc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-        nav {
-            background-color: #333;
-            overflow: hidden;
-        }
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+    .nav-left a, .nav-right a {
+      color: #007acc;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(0,122,204,0.3);
+      background-color: rgba(0,122,204,0.05);
+      transition: background 0.3s, color 0.3s, border 0.3s;
+      font-size: 16px;
+    }
 
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
+    .nav-left a:hover, .nav-right a:hover {
+      background-color: rgba(0,122,204,0.15);
+      border: 1px solid rgba(0,122,204,0.5);
+      color: #005c99;
+    }
 
-        .dropdown {
-            float: left;
-            overflow: hidden;
-        }
+    .page-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 500;
+      margin: 30px 0 10px;
+      color: #222;
+    }
 
-        .dropdown .dropbtn {
-            font-size: 16px;  
-            border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0;
-        }
+    .title-divider {
+      width: 200px;
+      height: 3px;
+      background: #007acc;
+      margin: 0 auto 30px;
+      border-radius: 2px;
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-        .dropdown-content a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
+    .section img {
+      display: block;
+      max-width: 300px;
+      width: 80%;
+      height: auto;
+      border-radius: 8px;
+      margin: 30px auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
+    .section h3, .section h4, .section h5, .section h6 {
+      text-align: center;
+      color: #007acc;
+      margin: 20px 0 10px;
+      font-weight: 500;
+    }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+    .from-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
 
-        /* New Contact Me Link */
-        .contact-me {
-            float: right;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            position: relative;
-        }
+    .from-container h4, .from-container h5 {
+      flex: 1 1 200px;
+      margin: 0 10px;
+      text-align: center;
+      font-weight: 400;
+    }
 
-        .contact-me:hover .contact-menu {
-            display: block;
-        }
+    .from-image {
+      display: block;
+      max-width: 90%;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-        .contact-menu {
-            display: none;
-            position: absolute;
-            background-color: lightgrey; /* Updated background color */
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0;
-            top: 60px;
-        }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffffff;
+      color: #888;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
+      margin-top: 40px;
+    }
 
-        .contact-menu a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
+    /* Contact Modal */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2000;
+    }
 
-        .contact-menu a:hover {
-            background-color: #ddd;
-        }
+    .contact-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 500px;
+      background-color: #ffffff;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      z-index: 3000;
+      text-align: left;
+    }
 
-        /* New Contact Modal */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 2;
-        }
+    .contact-modal h3 {
+      text-align: center;
+      margin-top: 0;
+      color: #007acc;
+    }
 
-        .contact-modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70%;
-            max-width: 500px; /* Set max-width as needed */
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-            text-align: left;
-            z-index: 3;
-        }
-
-        .contact-content {
-            text-align: left;
-        }
-
-        .section-divider {
-            width: 100%;
-            border-bottom: 1px solid #333; /* Dark grey border color */
-            margin-top: -20px; /* Adjust margin as needed */   
-        }
-
-        img {
-            display: block;
-            max-width: 35%; /* Make the image responsive */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 2vw; /* Border radius for a rounded corner effect */
-            margin-top: 30px; /* Adjust the top margin of the image */
-            margin-left: 4vw;
-            margin-bottom: 40px;
-        }
-
-        h6 {
-            font-size: 2vw;
-            font-family: 'Georgia', sans-serif;
-            margin-top: 1vw;
-            text-align: right; /* Align to the right */
-            margin-right: 4vw; /* Adjust right margin */
-            widtth: 80%
-            position: flex;
-        }
-        
-        .section-divider-2 {
-            width: 100%;
-            border-bottom: 1px solid rgb(128, 128, 128); /* Dark grey border color */
-            margin-bottom: -5vw;
-            margin-top: 30px;
-        }  
-        
-        h3 {
-            font-size: 2.5vw;
-            margin: auto; /* Center the h4 text on the page */
-            width: 100%; /* Set a width to control the centering */
-            clear: both;
-            text-align: center;
-            font-family: 'Georgia', sans-serif;
-            margin-top: 2vw;
-        }       
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100vw;
-            height: auto;
-            align-items: baseline;
-            position: relative;
-        }
-        
-        h4 {
-            text-align: left;
-            font-size: 2vw;
-            margin-left: 12vw;
-            font-family: 'Georgia', sans-serif;
-            z-index: 1;
-        }
-
-        h5 {
-            text-align: right;
-            font-size: 2vw;
-            margin-right: 14vw;
-            font-family: 'Georgia', sans-serif;
-            z-index: 1;
-        }
-        
-        .From-img {
-            width: 96vw; /* Set the width to 100% of the viewport width */
-            max-width: 100%; /* Ensure it doesn't exceed its natural size */
-            margin-left: 2vw;
-            margin-right: 2vw;
-            margin-top: -2vw;
-        }
-
-    </style>
+    /* Responsive */
+    @media (max-width: 600px) {
+      .from-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .from-container h4, .from-container h5 {
+        margin: 10px 0;
+      }
+      .page-title {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="dropdown">
-            <button class="dropbtn">Navigation</button>
-            <div class="dropdown-content">
-                <a href="index.html">Home</a>
-                <a href="resume.html">Docs & Certs</a>
-                <a href="blog.html">Blog</a>
-                <a href="Experience.html">Experience</a>
-            </div>
-        </div>
 
-        <a href="#" class="contact-me" onclick="toggleContactModal()">Contact Me
-            <div class="contact-menu">
-                <a href="#">Email</a>
-                <a href="#">Phone</a>
-            </div>
-        </a>
-    </nav>
+<div class="navbar">
+  <div class="nav-left">
+    <a href="index.html">Home</a>
+    <a href="resume.html">Docs & Certs</a>
+    <a href="blog.html">Blog</a>
+    <a href="Experience.html">Experience</a>
+  </div>
+  <div class="nav-right">
+    <a href="#" onclick="toggleContactModal()">Contact Me</a>
+  </div>
+</div>
 
-    <h1>About Me</h1>
+<div class="page-title">About Me</div>
+<div class="title-divider"></div>
 
-    <div class="section-divider"></div>
+<div class="section">
+  <img src="TOAD.png" alt="Your Image">
 
-    <img src="TOAD.png" alt="Your Image"> 
+  <h6>Quick Facts</h6>
 
-    <h6> Quick Facts </h6>
+  <h3>Where I'm From</h3>
+  <div class="from-container">
+    <h4>West Chester, PA</h4>
+    <h5>Pittsburgh, PA</h5>
+  </div>
+  <img class="from-image" src="Where I am From.png" alt="Where I'm From">
+</div>
 
-    <div class="section-divider"></div>
-    
-    <h3> Where I'm From </h3>
+<footer>
+  © 2025 Kyle Cinnamond. All rights reserved.
+</footer>
 
-    <div class="header-container">
-        <h4> West Chester, PA </h4>
-        <h5>  Pittsburgh, PA  </h5>
-    </div>    
-    
-        <img class="From-img" src="Where I am From.png" alt="WIFImage">
-    
-    <!-- Overlay div -->
-    <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
+<div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
+<div class="contact-modal" id="contactModal">
+  <div onclick="event.stopPropagation();">
+    <h3>Contact Information</h3>
+    <p>Email: <a href="mailto:Kycinnamond@gmail.com">Kycinnamond@gmail.com</a></p>
+    <p>Phone: +1 (610)-732-8556</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/kyle-cinnamond-253616227" target="_blank">LinkedIn Profile</a></p>
+  </div>
+</div>
 
-    <!-- Contact Modal -->
-    <div class="contact-modal" id="contactModal">
-        <div class="contact-content" onclick="event.stopPropagation();">
-            <h2 style="text-align: center;">Contact Information</h2>
-            <p>Email: Kycinnamond@gmail.com</p>
-            <p>Phone: +1 (610)-732-8556</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/kyle-cinnamond-253616227" target="_blank">www.linkedin.com/in/kyle-cinnamond-253616227</a></p>
-        </div>
-    </div>
-    
-    <script>
-        function toggleContactModal() {
-            var overlay = document.getElementById('overlay');
-            var modal = document.getElementById('contactModal');
-            overlay.style.display = (overlay.style.display === 'none' || overlay.style.display === '') ? 'block' : 'none';
-            modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
-        }
-    </script>
+<script>
+function toggleContactModal() {
+  var overlay = document.getElementById('overlay');
+  var modal = document.getElementById('contactModal');
+  var isVisible = overlay.style.display === 'block';
+  overlay.style.display = isVisible ? 'none' : 'block';
+  modal.style.display = isVisible ? 'none' : 'block';
+}
+</script>
+
 </body>
 </html>
