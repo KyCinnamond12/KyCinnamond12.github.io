@@ -67,50 +67,61 @@
       margin-top: 10px;
     }
 
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      justify-content: center;
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
     }
 
-    .card {
+    .box {
       background: white;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      flex: 1 1 250px;
-      max-width: 280px;
-      text-align: center;
       overflow: hidden;
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .card-content {
+      cursor: pointer;
+      transition: transform 0.3s, max-height 0.5s ease, padding 0.3s;
+      max-height: 60px;
       padding: 20px;
     }
 
-    .card-content h3 {
-      margin-top: 0;
-      color: #007acc;
-      font-weight: 500;
+    .box.active {
+      max-height: 500px;
+      padding: 20px;
     }
 
-    .card-content p {
+    .box h3 {
+      margin: 0;
+      color: #007acc;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .box-content {
+      margin-top: 15px;
+      display: none;
+      text-align: center;
+    }
+
+    .box.active .box-content {
+      display: block;
+    }
+
+    .box-content img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .box-content p {
       font-size: 16px;
       line-height: 1.4;
+      margin: 0;
     }
 
     footer {
@@ -186,32 +197,32 @@
   <p>Exploring, learning, and building in Pennsylvania and beyond.</p>
 </div>
 
-<div class="cards">
-  <div class="card">
-    <img src="Where I am From.png" alt="Where I'm From">
-    <div class="card-content">
-      <h3>Where I'm From</h3>
+<div class="grid">
+  <div class="box" onclick="toggleBox(this)">
+    <h3>Where I'm From</h3>
+    <div class="box-content">
+      <img src="Where I am From.png" alt="Where I'm From">
       <p>Originally from West Chester, PA, and now living in Pittsburgh. I love the community and energy of both places.</p>
     </div>
   </div>
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="University of Pittsburgh">
-    <div class="card-content">
-      <h3>Education</h3>
+  <div class="box" onclick="toggleBox(this)">
+    <h3>Education</h3>
+    <div class="box-content">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="University of Pittsburgh">
       <p>University of Pittsburgh graduate, where I built my foundation in business and technology.</p>
     </div>
   </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Hobbies">
-    <div class="card-content">
-      <h3>Hobbies</h3>
+  <div class="box" onclick="toggleBox(this)">
+    <h3>Hobbies</h3>
+    <div class="box-content">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Hobbies">
       <p>Enjoy hiking, cooking, and following the latest trends in investing and technology.</p>
     </div>
   </div>
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80" alt="Values">
-    <div class="card-content">
-      <h3>Values</h3>
+  <div class="box" onclick="toggleBox(this)">
+    <h3>Values</h3>
+    <div class="box-content">
+      <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80" alt="Values">
       <p>Driven by curiosity, authenticity, and the belief in lifelong learning.</p>
     </div>
   </div>
@@ -238,6 +249,16 @@ function toggleContactModal() {
   var isVisible = overlay.style.display === 'block';
   overlay.style.display = isVisible ? 'none' : 'block';
   modal.style.display = isVisible ? 'none' : 'block';
+}
+
+function toggleBox(clickedBox) {
+  document.querySelectorAll('.box').forEach(box => {
+    if (box === clickedBox) {
+      box.classList.toggle('active');
+    } else {
+      box.classList.remove('active');
+    }
+  });
 }
 </script>
 
