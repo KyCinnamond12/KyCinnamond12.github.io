@@ -22,20 +22,18 @@
       padding: 15px 20px;
     }
 
-    .navbar h1 {
-      margin: 0;
-      font-size: 28px;
-      white-space: nowrap;
-    }
-
-    .nav-links {
+    .nav-left, .nav-center, .nav-right {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
       align-items: center;
+      gap: 10px;
     }
 
-    .nav-links a {
+    .nav-center {
+      justify-content: center;
+      flex: 1;
+    }
+
+    .nav-left a, .nav-right a {
       color: white;
       text-decoration: none;
       padding: 8px 12px;
@@ -44,8 +42,14 @@
       font-size: 16px;
     }
 
-    .nav-links a:hover {
+    .nav-left a:hover, .nav-right a:hover {
       background-color: #555;
+    }
+
+    .nav-center h1 {
+      margin: 0;
+      font-size: 28px;
+      white-space: nowrap;
     }
 
     .section {
@@ -81,8 +85,9 @@
       line-height: 1.6;
       min-height: 450px;
       display: flex;
-      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     .text p {
@@ -165,6 +170,13 @@
       .text {
         min-height: auto;
       }
+      .nav-left, .nav-center, .nav-right {
+        flex: 1 1 100%;
+        justify-content: center;
+      }
+      .nav-center {
+        order: -1;
+      }
     }
 
     @media (max-width: 600px) {
@@ -183,12 +195,16 @@
 <body>
 
 <div class="navbar">
-  <h1>Work Experience</h1>
-  <div class="nav-links">
+  <div class="nav-left">
     <a href="index.html">Home</a>
     <a href="resume.html">Resume</a>
     <a href="blog.html">Blog</a>
     <a href="aboutme.html">About Me</a>
+  </div>
+  <div class="nav-center">
+    <h1>Work Experience</h1>
+  </div>
+  <div class="nav-right">
     <a href="#" onclick="toggleContactModal()">Contact Me</a>
   </div>
 </div>
@@ -196,7 +212,7 @@
 <section class="section">
   <h2>Princeton Capital Management</h2>
   <div class="pdf">
-    <iframe src="AIwhitepaper.pdf#page=1&view=FitH&toolbar=0"></iframe>
+    <iframe src="AIwhitepaper.pdf#page=1&view=Fit&toolbar=0"></iframe>
   </div>
   <div class="text">
     <h5>Artificial Intelligence White Paper Project</h5>
@@ -215,7 +231,7 @@
 
 <section class="section reverse">
   <div class="pdf">
-    <object data="LB2024.pdf#page=1&view=FitH&toolbar=0" type="application/pdf">
+    <object data="LB2024.pdf#page=1&view=Fit&toolbar=0" type="application/pdf">
       <p>It appears you don't have a PDF plugin for this browser.
         <a href="LB2024.pdf">Click here to download the PDF file.</a>
       </p>
