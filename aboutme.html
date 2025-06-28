@@ -65,54 +65,77 @@
       border-radius: 2px;
     }
 
-    .intro {
-      text-align: center;
-      padding: 20px;
-      font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
-    }
-
-    .section {
+    .container {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      box-sizing: border-box;
       gap: 40px;
+      padding: 0 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      box-sizing: border-box;
     }
 
-    .section.alt {
-      background-color: #ffffff;
-    }
-
-    .section-content {
+    .left, .right {
       flex: 1 1 400px;
-      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
-    .section-content h3 {
+    .card {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
       color: #007acc;
-      margin-bottom: 15px;
+      margin-top: 0;
+      margin-bottom: 10px;
       font-weight: 500;
-      text-align: left;
     }
 
-    .section-content p {
+    .card p {
       font-size: 18px;
       line-height: 1.6;
       margin: 0;
-      text-align: left;
     }
 
-    .section img {
-      flex: 1 1 400px;
-      max-width: 600px;
+    .from-images {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .from-images img {
+      width: 48%;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .education-img {
       width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .hobbies-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hobby {
+      flex: 1 1 40%;
+      background: #e6f3ff;
+      color: #007acc;
+      border-radius: 6px;
+      text-align: center;
+      padding: 10px;
+      font-weight: 500;
     }
 
     footer {
@@ -162,11 +185,11 @@
 
     /* Responsive */
     @media (max-width: 800px) {
-      .section {
+      .container {
         flex-direction: column;
       }
-      .section-content p, .section-content h3 {
-        text-align: center;
+      .hobbies-list {
+        justify-content: center;
       }
     }
 
@@ -194,25 +217,39 @@
 <div class="page-title">About Me</div>
 <div class="title-divider"></div>
 
-<div class="intro">
-  <p>Hello! I'm Kyle Cinnamond, originally from Pennsylvania. I'm passionate about learning, creating, and connecting with people and ideas that make an impact.</p>
-</div>
-
-<!-- Where I'm From Section -->
-<div class="section">
-  <div class="section-content">
-    <h3>Where I'm From</h3>
-    <p>I grew up in West Chester, PA, surrounded by community and opportunity. In recent years, I moved to Pittsburgh, PA to continue my journey—both personally and professionally. Pittsburgh has been an incredible place to grow and learn.</p>
+<div class="container">
+  <!-- Left Column -->
+  <div class="left">
+    <div class="card">
+      <h3>About Me</h3>
+      <p>Hello! I'm Kyle Cinnamond, originally from Pennsylvania. I'm passionate about learning, creating, and connecting with people and ideas that make an impact.</p>
+    </div>
+    <div class="card">
+      <h3>Where I'm From</h3>
+      <div class="from-images">
+        <img src="WestChester.jpg" alt="West Chester, PA">
+        <img src="Pittsburgh.jpg" alt="Pittsburgh, PA">
+      </div>
+      <p style="margin-top:15px;">I grew up in West Chester, PA, and later moved to Pittsburgh, PA, where I've continued my journey personally and professionally.</p>
+    </div>
   </div>
-  <img src="Where I am From.png" alt="Where I'm From">
-</div>
 
-<!-- Education Section -->
-<div class="section alt">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="University of Pittsburgh">
-  <div class="section-content">
-    <h3>Education</h3>
-    <p>I attended the University of Pittsburgh, where I expanded my horizons, met inspiring mentors and friends, and built the skills I carry with me today.</p>
+  <!-- Right Column -->
+  <div class="right">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cathedral_of_Learning.jpg/320px-Cathedral_of_Learning.jpg" alt="University of Pittsburgh" class="education-img">
+      <h3>Education</h3>
+      <p>I attended the University of Pittsburgh, where I developed my skills and met incredible people who inspired me.</p>
+    </div>
+    <div class="card">
+      <h3>Hobbies</h3>
+      <div class="hobbies-list">
+        <div class="hobby">Hiking</div>
+        <div class="hobby">Basketball</div>
+        <div class="hobby">Cooking</div>
+        <div class="hobby">Investing</div>
+      </div>
+    </div>
   </div>
 </div>
 
