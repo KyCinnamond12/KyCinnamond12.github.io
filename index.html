@@ -17,14 +17,13 @@
     body {
       display: flex;
       flex-direction: column;
-      align-items: center; /* Center content horizontally */
+      align-items: center;
     }
 
     .banner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      text-align: left;
       padding: 20px;
       position: fixed;
       width: calc(100% - 40px);
@@ -58,12 +57,10 @@
       margin: 0 10px;
     }
 
-    /* Styles for the centered text */
     .centered-text {
       font-size: 36px;
-      margin-top: 20vh; /* Adjust as needed based on your design */
+      margin-top: 20vh;
     }
-
   </style>
 </head>
 <body>
@@ -78,6 +75,7 @@
     </div>
   </div>
 
+  <script>
     function openResume() {
       window.location.href = 'resume.html';
     }
