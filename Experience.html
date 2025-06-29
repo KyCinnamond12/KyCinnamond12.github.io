@@ -131,6 +131,23 @@ body {
   height: 100%;
   border: none;
 }
+.mobile-preview {
+  display: none;
+  text-align: center;
+}
+.mobile-preview img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.mobile-preview a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
 footer {
   text-align: center;
   padding: 20px;
@@ -211,6 +228,8 @@ details summary {
 @media (max-width: 600px) {
   .desktop-desc { display: none; }
   .mobile-desc { display: block; }
+  .pdf { display: none; }
+  .mobile-preview { display: block; }
 }
 </style>
 </head>
@@ -239,18 +258,22 @@ details summary {
 </div>
 
 <section class="section">
-  <div class="pdf">
+  <div class="pdf desktop-only">
     <iframe src="AIwhitepaper.pdf#view=FitH"></iframe>
+  </div>
+  <div class="mobile-preview">
+    <img src="aiwhitepaper-thumbnail.jpg" alt="AI White Paper Preview">
+    <a href="AIwhitepaper.pdf" target="_blank">Download PDF</a>
   </div>
   <div class="text">
     <h5>Artificial Intelligence White Paper Project</h5>
     <div class="divider"></div>
     <div class="desktop-desc">
-      <p>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries, leaving many unfamiliar with its nature and intricacies. This Artificial Intelligence Investment Presentation aims to answer four major questions: What is it, How Do You Play, Who are the Winners, and Who are the Losers. These four major questions come together to provide investment options for the future of AI. An emphasis on “What is it” is made due to the importance of understanding the background of such an intricate field before investing. The presentation uses relatable examples to facilitate understanding throughout. The investment selections, curated in July 2023, provide insights into potential opportunities, but it's crucial to note that the content does not constitute financial advice for 2024.</p>
+      <p>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries...</p>
     </div>
     <details class="mobile-desc">
       <summary>Description</summary>
-      <p>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries, leaving many unfamiliar with its nature and intricacies. This Artificial Intelligence Investment Presentation aims to answer four major questions: What is it, How Do You Play, Who are the Winners, and Who are the Losers. These four major questions come together to provide investment options for the future of AI. An emphasis on “What is it” is made due to the importance of understanding the background of such an intricate field before investing. The presentation uses relatable examples to facilitate understanding throughout. The investment selections, curated in July 2023, provide insights into potential opportunities, but it's crucial to note that the content does not constitute financial advice for 2024.</p>
+      <p>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries...</p>
     </details>
   </div>
 </section>
@@ -258,18 +281,22 @@ details summary {
 <hr>
 
 <section class="section reverse">
-  <div class="pdf">
+  <div class="pdf desktop-only">
     <iframe src="LB2024.pdf#view=FitH"></iframe>
+  </div>
+  <div class="mobile-preview">
+    <img src="lb2024-thumbnail.jpg" alt="Look Book Preview">
+    <a href="LB2024.pdf" target="_blank">Download PDF</a>
   </div>
   <div class="text">
     <h4>Banking Portfolio Look Book Project</h4>
     <div class="divider"></div>
     <div class="desktop-desc">
-      <p>The "Portfolio Look Book" serves as a visual resource for clients interested in the Banking Fund, offering a comprehensive overview of the Long Investments within each portfolio. The presentation highlights crucial metrics carefully selected to provide a holistic representation of the company's financial health. Updated quarterly, the Look Book ensures the inclusion of the latest information, featuring 1-year stock charts and the last 8 quarters of Non-Performing Assets (NPA) to Total Assets percentage, effectively demonstrating the asset quality evolution over the past two years. As the summaries evolve over future quarters and years, certain metrics will be added and taken away to highlight specific aspects of a bank if there is something important at that period in time.</p>
+      <p>The "Portfolio Look Book" serves as a visual resource for clients interested in the Banking Fund...</p>
     </div>
     <details class="mobile-desc">
       <summary>Description</summary>
-      <p>The "Portfolio Look Book" serves as a visual resource for clients interested in the Banking Fund, offering a comprehensive overview of the Long Investments within each portfolio. The presentation highlights crucial metrics carefully selected to provide a holistic representation of the company's financial health. Updated quarterly, the Look Book ensures the inclusion of the latest information, featuring 1-year stock charts and the last 8 quarters of Non-Performing Assets (NPA) to Total Assets percentage, effectively demonstrating the asset quality evolution over the past two years. As the summaries evolve over future quarters and years, certain metrics will be added and taken away to highlight specific aspects of a bank if there is something important at that period in time.</p>
+      <p>The "Portfolio Look Book" serves as a visual resource for clients interested in the Banking Fund...</p>
     </details>
   </div>
 </section>
@@ -277,18 +304,22 @@ details summary {
 <hr>
 
 <section class="section">
-  <div class="pdf">
+  <div class="pdf desktop-only">
     <iframe src="https://onedrive.live.com/embed?resid=FCE7D42EA0BC28D2%211131&authkey=!AJtj6gXJ5g7YdWw&em=2"></iframe>
+  </div>
+  <div class="mobile-preview">
+    <img src="foli-thumbnail.jpg" alt="Projection Preview">
+    <a href="https://onedrive.live.com/download?resid=FCE7D42EA0BC28D2%211131" target="_blank">Download PDF</a>
   </div>
   <div class="text">
     <h6>First of Long Island Bank 10-Year Projection Project</h6>
     <div class="divider"></div>
     <div class="desktop-desc">
-      <p>This is a filler paragraph. I am having a wonderful day, we went to the Pitt basketball game and got free Pitt Pit Vipers and won the game. It was our last home game of our college career so you know we all had to put the whole DraftKings balance on the spread at -6.5. Of course we hit that thanks to the GOAT Blake Hinson (if only he could make free throws...). We then came home and checked on our slowcooker Birria Tacos after 12 hours and they are gasssssss. Billy and I will be eating them for a few days as we cooked 5 pounds of meat lol.</p>
+      <p>This is a filler paragraph about the project and your day.</p>
     </div>
     <details class="mobile-desc">
       <summary>Description</summary>
-      <p>This is a filler paragraph. I am having a wonderful day, we went to the Pitt basketball game and got free Pitt Pit Vipers and won the game. It was our last home game of our college career so you know we all had to put the whole DraftKings balance on the spread at -6.5. Of course we hit that thanks to the GOAT Blake Hinson (if only he could make free throws...). We then came home and checked on our slowcooker Birria Tacos after 12 hours and they are gasssssss. Billy and I will be eating them for a few days as we cooked 5 pounds of meat lol.</p>
+      <p>This is a filler paragraph about the project and your day.</p>
     </details>
   </div>
 </section>
@@ -320,5 +351,6 @@ function toggleMenu() {
   nav.classList.toggle('show');
 }
 </script>
+
 </body>
 </html>
