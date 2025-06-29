@@ -16,27 +16,37 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-/* NavBar */
 .navbar {
   background-color: #ffffff;
   color: #007acc;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   padding: 15px 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
   z-index: 10;
 }
-.nav-left, .nav-right {
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+.nav-left h1 {
+  font-size: 22px;
+  margin: 0;
+  color: #007acc;
+}
+.nav-right {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.nav-left a, .nav-right a {
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+.nav-links a {
   color: #007acc;
   text-decoration: none;
   padding: 8px 12px;
@@ -46,49 +56,19 @@ body {
   transition: background 0.3s, color 0.3s, border 0.3s;
   font-size: 16px;
 }
-.nav-left a:hover, .nav-right a:hover {
+.nav-links a:hover {
   background-color: rgba(0,122,204,0.15);
   border: 1px solid rgba(0,122,204,0.5);
   color: #005c99;
 }
-
-/* Hamburger Menu */
-.hamburger {
+.menu-icon {
   display: none;
-  flex-direction: column;
-  gap: 5px;
+  font-size: 24px;
   cursor: pointer;
 }
-.hamburger div {
-  width: 25px;
-  height: 3px;
-  background: #007acc;
-  border-radius: 2px;
+main {
+  flex: 1;
 }
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.95);
-  position: absolute;
-  top: 60px;
-  right: 15px;
-  width: 200px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  z-index: 999;
-}
-.mobile-menu a {
-  color: #007acc;
-  padding: 12px 16px;
-  text-decoration: none;
-  text-align: left;
-  border-bottom: 1px solid #eee;
-}
-.mobile-menu a:hover {
-  background: #f0f0f0;
-}
-
-/* Hero Section */
 .hero {
   background: #007acc;
   color: white;
@@ -106,8 +86,6 @@ body {
   font-size: 20px;
   line-height: 1.5;
 }
-
-/* Cards */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -144,8 +122,14 @@ body {
   color: #007acc;
   font-weight: 500;
 }
-
-/* Modal */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #888;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
 .overlay-modal {
   display: none;
   position: fixed;
@@ -158,13 +142,14 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  box-sizing: border-box;
 }
 .modal {
   background: #ffffff;
   border-radius: 8px;
-  width: 90%;
-  max-width: 900px;
-  min-height: 500px;
+  width: 95%;
+  max-width: 600px;
+  min-height: 300px;
   max-height: 80vh;
   padding: 20px;
   box-shadow: 0 0 25px rgba(0,0,0,0.3);
@@ -176,8 +161,9 @@ body {
 .modal-content img {
   display: block;
   margin: 0 auto 15px auto;
-  max-width: 100%;
+  width: 100%;
   height: auto;
+  max-width: 100%;
 }
 .modal-content .cfa-logo {
   max-width: 250px;
@@ -190,8 +176,14 @@ body {
   font-size: 16px;
   line-height: 1.4;
 }
-
-/* Contact Modal */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  color: #888;
+  cursor: pointer;
+}
 .contact-overlay,
 .contact-modal {
   display: none;
@@ -225,29 +217,27 @@ body {
   margin-top: 0;
   color: #007acc;
 }
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 22px;
-  color: #888;
-  cursor: pointer;
-}
-
-/* FadeIn Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95);}
   to { opacity: 1; transform: scale(1);}
 }
-
-/* Responsive */
 @media (max-width: 600px) {
-  .nav-left {
+  .nav-links {
     display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #ffffff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   }
-  .hamburger {
+  .nav-links.show {
     display: flex;
+  }
+  .menu-icon {
+    display: block;
   }
   .hero h1 {
     font-size: 32px;
@@ -261,24 +251,19 @@ body {
 <body>
 
 <div class="navbar">
-  <h1 style="margin:0; font-size:24px;">Kyle Cinnamond</h1>
   <div class="nav-left">
-    <a href="index.html">Home</a>
-    <a href="resume.html">Docs & Certs</a>
-    <a href="blog.html">Blog</a>
-    <a href="Experience.html">Experience</a>
+    <h1>Kyle Cinnamond</h1>
   </div>
-  <div class="hamburger" onclick="toggleMobileMenu()">
-    <div></div><div></div><div></div>
+  <div class="nav-right">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="resume.html">Docs & Certs</a>
+      <a href="blog.html">Blog</a>
+      <a href="Experience.html">Experience</a>
+      <a href="#" onclick="toggleContact()">Contact Me</a>
+    </div>
   </div>
-</div>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="resume.html">Docs & Certs</a>
-  <a href="blog.html">Blog</a>
-  <a href="Experience.html">Experience</a>
-  <a href="#" onclick="toggleContact()">Contact Me</a>
 </div>
 
 <main>
@@ -329,7 +314,6 @@ body {
   </div>
 </div>
 
-<!-- Modal Content Sections -->
 <div id="whereContent" style="display:none;">
   <img src="Where I am From.png" alt="Where I'm From">
   <p>Originally from West Chester, PA, and now living in Pittsburgh. I love the community and energy of both places.</p>
@@ -354,7 +338,6 @@ body {
   <p>I'm passionate about investing, equity markets, and the constantly evolving world of finance. I enjoy following market trends, studying companies, and exploring new ideas in asset management and economics.</p>
 </div>
 
-<!-- Contact Modal -->
 <div class="contact-overlay" id="contactOverlay" onclick="toggleContact()"></div>
 <div class="contact-modal" id="contactModal">
   <div onclick="event.stopPropagation();">
@@ -366,6 +349,10 @@ body {
 </div>
 
 <script>
+function toggleMenu() {
+  const nav = document.getElementById('navLinks');
+  nav.classList.toggle('show');
+}
 function openModal(title, contentHTML) {
   document.getElementById('modalTitle').textContent = title;
   document.getElementById('modalContent').innerHTML = contentHTML;
@@ -381,10 +368,7 @@ function toggleContact() {
   overlay.style.display = isVisible ? 'none' : 'block';
   modal.style.display = isVisible ? 'none' : 'block';
 }
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-}
 </script>
+
 </body>
 </html>
