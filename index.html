@@ -108,7 +108,7 @@
       transform: translateY(-2px);
     }
 
-    /* Contact Modal */
+    /* Contact Modal Styles */
     .overlay {
       display: none;
       position: fixed;
@@ -155,14 +155,19 @@
     @media (max-width: 600px) {
       .navbar {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
+      }
+
+      .navbar h1 {
+        width: 100%;
+        margin-bottom: 10px;
       }
 
       .nav-buttons {
         flex-direction: column;
         width: 100%;
         gap: 8px;
-        margin-top: 10px;
       }
 
       .nav-buttons button {
