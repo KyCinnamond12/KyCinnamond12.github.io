@@ -1,233 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Work Experience</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fb;
-      color: #333;
-    }
-
-    .navbar {
-      background-color: #ffffff;
-      color: #007acc;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 15px 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .nav-left, .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-left a, .nav-right a {
-      color: #007acc;
-      text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      border: 1px solid rgba(0,122,204,0.3);
-      background-color: rgba(0,122,204,0.05);
-      transition: background 0.3s, color 0.3s, border 0.3s;
-      font-size: 16px;
-    }
-
-    .nav-left a:hover, .nav-right a:hover {
-      background-color: rgba(0,122,204,0.15);
-      border: 1px solid rgba(0,122,204,0.5);
-      color: #005c99;
-    }
-
-    .page-title {
-      text-align: center;
-      font-size: 36px;
-      font-weight: 500;
-      margin: 30px 0 10px;
-      color: #222;
-    }
-
-    .title-divider {
-      width: 200px;
-      height: 3px;
-      background: #007acc;
-      margin: 0 auto 30px;
-      border-radius: 2px;
-    }
-
-    .intro-text {
-      max-width: 800px;
-      margin: 0 auto 40px auto;
-      text-align: center;
-      font-size: 18px;
-      line-height: 1.5;
-      color: #555;
-    }
-
-    .section {
-      width: 100%;
-      margin: 0 auto;
-      padding: 40px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      gap: 40px;
-      box-sizing: border-box;
-    }
-
-    .section.reverse {
-      flex-direction: row-reverse;
-    }
-
-    .section h2,
-    .section h4,
-    .section h5,
-    .section h6 {
-      flex-basis: 100%;
-      font-size: 28px;
-      color: #007acc;
-      margin: 0 0 10px;
-      text-align: center;
-    }
-
-    .divider {
-      width: 100%;
-      border-top: 1px solid #ccc;
-      margin-bottom: 20px;
-    }
-
-    .text {
-      flex: 1 1 500px;
-      font-size: 18px;
-      line-height: 1.6;
-      text-align: center;
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .text p {
-      margin: 0;
-    }
-
-    .pdf {
-      flex: 1 1 500px;
-      height: 450px;
-      border-radius: 8px;
-      overflow: hidden;
-      background-color: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .pdf iframe,
-    .pdf object {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid #ddd;
-      margin: 40px auto;
-      width: 90%;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #ffffff;
-      color: #888;
-      font-size: 14px;
-      border-top: 1px solid #ddd;
-    }
-
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 2000;
-    }
-
-    .contact-modal {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      max-width: 500px;
-      background-color: #ffffff;
-      color: black;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-      z-index: 3000;
-      text-align: left;
-    }
-
-    .contact-modal h3 {
-      text-align: center;
-      margin-top: 0;
-      color: #007acc;
-    }
-
-    @media (max-width: 800px) {
-      .section {
-        flex-direction: column;
-      }
-      .section.reverse {
-        flex-direction: column;
-      }
-      .nav-left, .nav-right {
-        flex: 1 1 100%;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .section h2,
-      .section h4,
-      .section h5,
-      .section h6 {
-        font-size: 24px;
-      }
-      .text {
-        font-size: 16px;
-      }
-      .page-title {
-        font-size: 28px;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Work Experience</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fb;
+  color: #333;
+}
+.navbar {
+  background-color: #ffffff;
+  color: #007acc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav-left h1 {
+  font-size: 22px;
+  margin: 0;
+  color: #007acc;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+.nav-links a {
+  color: #007acc;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,122,204,0.3);
+  background-color: rgba(0,122,204,0.05);
+  transition: background 0.3s, color 0.3s, border 0.3s;
+  font-size: 16px;
+}
+.nav-links a:hover {
+  background-color: rgba(0,122,204,0.15);
+  border: 1px solid rgba(0,122,204,0.5);
+  color: #005c99;
+}
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.page-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+.title-divider {
+  width: 200px;
+  height: 3px;
+  background: #007acc;
+  margin: 0 auto 30px;
+  border-radius: 2px;
+}
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #555;
+}
+.section {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+  box-sizing: border-box;
+}
+.section.reverse {
+  flex-direction: row-reverse;
+}
+.section h2,
+.section h4,
+.section h5,
+.section h6 {
+  flex-basis: 100%;
+  font-size: 28px;
+  color: #007acc;
+  margin: 0 0 10px;
+  text-align: center;
+}
+.divider {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.text {
+  flex: 1 1 500px;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.text p {
+  margin: 0;
+}
+.pdf {
+  flex: 1 1 500px;
+  height: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.pdf iframe,
+.pdf object {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #888;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2000;
+}
+.contact-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background: #ffffff;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+  z-index: 3000;
+}
+.contact-modal h3 {
+  text-align: center;
+  margin-top: 0;
+}
+details {
+  text-align: left;
+  cursor: pointer;
+}
+details summary {
+  font-weight: bold;
+  font-size: 16px;
+  color: #007acc;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f0f0f0;
+  margin-bottom: 10px;
+}
+@media (max-width: 800px) {
+  .section {
+    flex-direction: column;
+  }
+  .section.reverse {
+    flex-direction: column;
+  }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #ffffff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-icon {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  .section h2,
+  .section h4,
+  .section h5,
+  .section h6 {
+    font-size: 24px;
+  }
+  .text {
+    font-size: 16px;
+  }
+  .page-title {
+    font-size: 28px;
+  }
+}
+</style>
 </head>
 <body>
 
 <div class="navbar">
   <div class="nav-left">
-    <a href="index.html">Home</a>
-    <a href="resume.html">Resume</a>
-    <a href="blog.html">Blog</a>
-    <a href="aboutme.html">About Me</a>
+    <h1>Kyle Cinnamond</h1>
   </div>
   <div class="nav-right">
-    <a href="#" onclick="toggleContactModal()">Contact Me</a>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="blog.html">Blog</a>
+      <a href="aboutme.html">About Me</a>
+      <a href="#" onclick="toggleContactModal()">Contact Me</a>
+    </div>
   </div>
 </div>
 
@@ -239,19 +249,15 @@
 
 <section class="section">
   <div class="pdf">
-    <iframe src="AIwhitepaper.pdf#page=1&view=Fit&toolbar=0"></iframe>
+    <iframe src="AIwhitepaper.pdf#view=FitH"></iframe>
   </div>
   <div class="text">
     <h5>Artificial Intelligence White Paper Project</h5>
     <div class="divider"></div>
-    <p>The field of Artificial Intelligence has swiftly emerged as one of 
-      the world's fastest-growing industries, leaving many unfamiliar with its nature and intricacies. This Artificial 
-      Intelligence Investment Presentation aims to answer four major questions: What is it, How Do You Play, Who are the 
-      Winners, and Who are the Losers. These four major questions come together to provide Investment options for the future 
-      of AI. An emphasis on “What is it” is made due to the importance of understanding the background of such an intricate 
-      field before investing. The presentation uses relatable examples to facilitate understanding throughout. The investment 
-      selections, curated in July 2023, provide insights into potential opportunities, but it's crucial to note that the 
-      content does not constitute financial advice for 2024.</p>
+    <details>
+      <summary>Description</summary>
+      <p>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries, leaving many unfamiliar with its nature and intricacies. This Artificial Intelligence Investment Presentation aims to answer four major questions: What is it, How Do You Play, Who are the Winners, and Who are the Losers. These four major questions come together to provide Investment options for the future of AI. An emphasis on “What is it” is made due to the importance of understanding the background of such an intricate field before investing. The presentation uses relatable examples to facilitate understanding throughout.</p>
+    </details>
   </div>
 </section>
 
@@ -259,24 +265,15 @@
 
 <section class="section reverse">
   <div class="pdf">
-    <object data="LB2024.pdf#page=1&view=Fit&toolbar=0" type="application/pdf">
-      <p>It appears you don't have a PDF plugin for this browser.
-        <a href="LB2024.pdf">Click here to download the PDF file.</a>
-      </p>
-    </object>
+    <iframe src="LB2024.pdf#view=FitH"></iframe>
   </div>
   <div class="text">
     <h4>Banking Portfolio Look Book Project</h4>
     <div class="divider"></div>
-    <p>The "Portfolio Look Book" serves as a visual resource
-      for clients interested in the Banking Fund, offering a comprehensive overview of the Long Investments 
-      within each portfolio. The presentation highlights crucial metrics carefully selected to provide a 
-      holistic representation of the company's financial health. Updated quarterly, the Look Book ensures 
-      the inclusion of the latest information, featuring 1-year stock charts and the last 8 quarters of 
-      Non-Performing Assets (NPA) to Total Assets percentage, effectively demonstrating the asset quality 
-      evolution over the past two years. As the summaries evolve over the future Quarters and Years, certain 
-      metrics will be added and taken away to highlight certain aspects of a bank if there is something that 
-      is important at the period of time.</p>
+    <details>
+      <summary>Description</summary>
+      <p>The "Portfolio Look Book" serves as a visual resource for clients interested in the Banking Fund, offering a comprehensive overview of the Long Investments within each portfolio. The presentation highlights crucial metrics carefully selected to provide a holistic representation of the company's financial health. Updated quarterly, the Look Book ensures the inclusion of the latest information.</p>
+    </details>
   </div>
 </section>
 
@@ -289,11 +286,10 @@
   <div class="text">
     <h6>First of Long Island Bank 10-Year Projection Project</h6>
     <div class="divider"></div>
-    <p>This is a filler paragraph. I am having a wonderful day, we went to the Pitt
-      basketball game and got free Pitt Pit Vipers and won the game. It was our last home game of our college career so you know we all
-      had to put the whole DraftKings balance on the spread at -6.5. Of course we hit that thanks to the GOAT Blake Hinson (if only he
-      could make free throws...). We then came home and checked on our slowcooker Birria Tacos after 12 hours and they are gasssssss. Billy
-      and I will be eating them for a few days as we cooked 5 pounds of meat lol.</p>
+    <details>
+      <summary>Description</summary>
+      <p>This is a filler paragraph. I am having a wonderful day, we went to the Pitt basketball game and got free Pitt Pit Vipers and won the game. It was our last home game of our college career so you know we all had to put the whole DraftKings balance on the spread at -6.5. Of course we hit that thanks to the GOAT Blake Hinson (if only he could make free throws...). We then came home and checked on our slowcooker Birria Tacos after 12 hours and they are gasssssss.</p>
+    </details>
   </div>
 </section>
 
@@ -313,11 +309,15 @@
 
 <script>
 function toggleContactModal() {
-  var overlay = document.getElementById('overlay');
-  var modal = document.getElementById('contactModal');
-  var isVisible = overlay.style.display === 'block';
+  const overlay = document.getElementById('overlay');
+  const modal = document.getElementById('contactModal');
+  const isVisible = overlay.style.display === 'block';
   overlay.style.display = isVisible ? 'none' : 'block';
   modal.style.display = isVisible ? 'none' : 'block';
+}
+function toggleMenu() {
+  const nav = document.getElementById('navLinks');
+  nav.classList.toggle('show');
 }
 </script>
 
