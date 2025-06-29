@@ -126,8 +126,7 @@ body {
   background-color: #ffffff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-.pdf iframe,
-.pdf object {
+.pdf iframe {
   width: 100%;
   height: 100%;
   border: none;
@@ -183,6 +182,12 @@ details summary {
   background: #f0f0f0;
   margin-bottom: 10px;
 }
+.desktop-desc {
+  display: block;
+}
+.mobile-desc {
+  display: none;
+}
 @media (max-width: 800px) {
   .section {
     flex-direction: column;
@@ -208,17 +213,11 @@ details summary {
   }
 }
 @media (max-width: 600px) {
-  .section h2,
-  .section h4,
-  .section h5,
-  .section h6 {
-    font-size: 24px;
+  .desktop-desc {
+    display: none;
   }
-  .text {
-    font-size: 16px;
-  }
-  .page-title {
-    font-size: 28px;
+  .mobile-desc {
+    display: block;
   }
 }
 </style>
@@ -244,7 +243,7 @@ details summary {
 <div class="page-title">Work Experience</div>
 <div class="title-divider"></div>
 <div class="intro-text">
-  All of the projects below were completed while working at Princeton Capital Management, a boutique investment firm focused on equities research and portfolio management. In my role, I supported research initiatives, financial modeling, and the creation of client materials that aligned with the firm's strategies.
+  All of the projects below were completed while working at Princeton Capital Management, a boutique investment firm focused on equities research and portfolio management.
 </div>
 
 <section class="section">
@@ -254,9 +253,12 @@ details summary {
   <div class="text">
     <h5>Artificial Intelligence White Paper Project</h5>
     <div class="divider"></div>
-    <details>
+    <div class="desktop-desc">
+      <p>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries...</p>
+    </div>
+    <details class="mobile-desc">
       <summary>Description</summary>
-      <p>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries, leaving many unfamiliar with its nature and intricacies. This Artificial Intelligence Investment Presentation aims to answer four major questions: What is it, How Do You Play, Who are the Winners, and Who are the Losers. These four major questions come together to provide Investment options for the future of AI. An emphasis on “What is it” is made due to the importance of understanding the background of such an intricate field before investing. The presentation uses relatable examples to facilitate understanding throughout.</p>
+      <p>The field of Artificial Intelligence has swiftly emerged as one of the world's fastest-growing industries...</p>
     </details>
   </div>
 </section>
@@ -270,9 +272,12 @@ details summary {
   <div class="text">
     <h4>Banking Portfolio Look Book Project</h4>
     <div class="divider"></div>
-    <details>
+    <div class="desktop-desc">
+      <p>The "Portfolio Look Book" serves as a visual resource for clients interested in the Banking Fund...</p>
+    </div>
+    <details class="mobile-desc">
       <summary>Description</summary>
-      <p>The "Portfolio Look Book" serves as a visual resource for clients interested in the Banking Fund, offering a comprehensive overview of the Long Investments within each portfolio. The presentation highlights crucial metrics carefully selected to provide a holistic representation of the company's financial health. Updated quarterly, the Look Book ensures the inclusion of the latest information.</p>
+      <p>The "Portfolio Look Book" serves as a visual resource for clients interested in the Banking Fund...</p>
     </details>
   </div>
 </section>
@@ -286,9 +291,12 @@ details summary {
   <div class="text">
     <h6>First of Long Island Bank 10-Year Projection Project</h6>
     <div class="divider"></div>
-    <details>
+    <div class="desktop-desc">
+      <p>This is a filler paragraph about the project and your day.</p>
+    </div>
+    <details class="mobile-desc">
       <summary>Description</summary>
-      <p>This is a filler paragraph. I am having a wonderful day, we went to the Pitt basketball game and got free Pitt Pit Vipers and won the game. It was our last home game of our college career so you know we all had to put the whole DraftKings balance on the spread at -6.5. Of course we hit that thanks to the GOAT Blake Hinson (if only he could make free throws...). We then came home and checked on our slowcooker Birria Tacos after 12 hours and they are gasssssss.</p>
+      <p>This is a filler paragraph about the project and your day.</p>
     </details>
   </div>
 </section>
