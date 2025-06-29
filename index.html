@@ -1,245 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kyle Cinnamond</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, royalblue, #ffffff);
-      color: #ffffff;
-      height: 100%;
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kyle Cinnamond</title>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, royalblue, #ffffff);
+  color: #ffffff;
+  height: 100%;
+}
 
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-    /* Navigation Bar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 20px 40px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 128, 0.4);
-      backdrop-filter: blur(6px);
-      box-sizing: border-box;
-      z-index: 1000;
-    }
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 128, 0.4);
+  backdrop-filter: blur(6px);
+  box-sizing: border-box;
+  z-index: 1000;
+}
 
-    .navbar h1 {
-      margin: 0;
-      font-size: 28px;
-      color: white;
-    }
+.navbar h1 {
+  margin: 0;
+  font-size: 28px;
+  color: white;
+}
 
-    .nav-buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
 
-    .nav-buttons button {
-      padding: 8px 16px;
-      font-size: 16px;
-      background: transparent;
-      color: white;
-      border: 1.5px solid white;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-      flex: 1 1 auto;
-    }
+.nav-buttons button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background: transparent;
+  color: white;
+  border: 1.5px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
 
-    .nav-buttons button:hover {
-      background: white;
-      color: royalblue;
-    }
+.nav-buttons button:hover {
+  background: white;
+  color: royalblue;
+}
 
-    /* Hero Section */
-    .hero {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 100px 20px 40px;
-      text-align: center;
-      margin-top: 80px; /* space for navbar */
-    }
+/* Hamburger Menu Icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
 
-    .hero h2 {
-      font-size: 48px;
-      margin: 0 0 20px;
-    }
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
 
-    .hero p {
-      font-size: 20px;
-      max-width: 600px;
-      margin: 0 0 30px;
-      line-height: 1.5;
-    }
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 128, 0.9);
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 10px 0;
+  z-index: 999;
+}
 
-    .hero .cta-button {
-      padding: 12px 24px;
-      font-size: 18px;
-      background: white;
-      color: royalblue;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-    }
+.mobile-menu button {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
 
-    .hero .cta-button:hover {
-      background: #f0f0f0;
-      transform: translateY(-2px);
-    }
+.mobile-menu button:hover {
+  background: rgba(255,255,255,0.2);
+}
 
-    /* Contact Modal Styles */
-    .overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 2000;
-    }
+/* Hero Section */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px 40px;
+  text-align: center;
+  margin-top: 80px; /* space for navbar */
+}
 
-    .contact-modal {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      max-width: 500px;
-      background-color: rgba(255, 255, 255, 0.95);
-      color: black;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-      z-index: 3000;
-      text-align: left;
-    }
+.hero h2 {
+  font-size: 48px;
+  margin: 0 0 20px;
+}
 
-    .contact-modal h3 {
-      text-align: center;
-      margin-top: 0;
-    }
+.hero p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 0 30px;
+  line-height: 1.5;
+}
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 128, 0.2);
-      color: white;
-      font-size: 14px;
-    }
+.hero .cta-button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background: white;
+  color: royalblue;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .navbar {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
+.hero .cta-button:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
 
-      .navbar h1 {
-        width: 100%;
-        margin-bottom: 10px;
-      }
+/* Contact Modal */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+}
 
-      .nav-buttons {
-        flex-direction: column;
-        width: 100%;
-        gap: 8px;
-      }
+.contact-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  z-index: 3000;
+  text-align: left;
+}
 
-      .nav-buttons button {
-        width: 100%;
-      }
+.contact-modal h3 {
+  text-align: center;
+  margin-top: 0;
+  color: #007acc;
+}
 
-      .hero h2 {
-        font-size: 32px;
-      }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 128, 0.2);
+  color: white;
+  font-size: 14px;
+}
 
-      .hero p {
-        font-size: 16px;
-      }
-    }
-  </style>
+/* Responsive */
+@media (max-width: 600px) {
+  .nav-buttons {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .hero h2 {
+    font-size: 32px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+}
+</style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <div class="navbar">
-    <h1>Kyle Cinnamond</h1>
-    <div class="nav-buttons">
-      <button onclick="openAboutMe()">About Me</button>
-      <button onclick="openExperience()">Experience</button>
-      <button onclick="openBlog()">Blog</button>
-      <button onclick="toggleContactModal()">Contact Me</button>
-    </div>
+<!-- Navigation Bar -->
+<div class="navbar">
+  <h1>Kyle Cinnamond</h1>
+  <div class="nav-buttons">
+    <button onclick="openAboutMe()">About Me</button>
+    <button onclick="openExperience()">Experience</button>
+    <button onclick="openBlog()">Blog</button>
+    <button onclick="toggleContactModal()">Contact Me</button>
   </div>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Welcome to My Personal Website</h2>
-    <p>I'm Kyle Cinnamond, passionate about finance, technology, and lifelong learning. Explore my background, experience, and thoughts on the industries that inspire me.</p>
-    <button class="cta-button" onclick="openAboutMe()">Learn More About Me</button>
-  </section>
-
-  <!-- Contact Modal Overlay -->
-  <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
-  <div class="contact-modal" id="contactModal">
-    <div onclick="event.stopPropagation();">
-      <h3>Contact Information</h3>
-      <p>Email: <a href="mailto:Kycinnamond@gmail.com">Kycinnamond@gmail.com</a></p>
-      <p>Phone: +1 (610)-732-8556</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/kyle-cinnamond-253616227" target="_blank">LinkedIn Profile</a></p>
-    </div>
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
+</div>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Kyle Cinnamond. All rights reserved.
-  </footer>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button onclick="openAboutMe()">About Me</button>
+  <button onclick="openExperience()">Experience</button>
+  <button onclick="openBlog()">Blog</button>
+  <button onclick="toggleContactModal()">Contact Me</button>
+</div>
 
-  <!-- Scripts -->
-  <script>
-    function openAboutMe() {
-      window.location.href = 'aboutme.html';
-    }
+<!-- Hero Section -->
+<section class="hero">
+  <h2>Welcome to My Personal Website</h2>
+  <p>I'm Kyle Cinnamond, passionate about finance, technology, and lifelong learning. Explore my background, experience, and thoughts on the industries that inspire me.</p>
+  <button class="cta-button" onclick="openAboutMe()">Learn More About Me</button>
+</section>
 
-    function openExperience() {
-      window.location.href = 'Experience.html';
-    }
+<!-- Contact Modal Overlay -->
+<div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
+<div class="contact-modal" id="contactModal">
+  <div onclick="event.stopPropagation();">
+    <h3>Contact Information</h3>
+    <p>Email: <a href="mailto:Kycinnamond@gmail.com">Kycinnamond@gmail.com</a></p>
+    <p>Phone: +1 (610)-732-8556</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/kyle-cinnamond-253616227" target="_blank">LinkedIn Profile</a></p>
+  </div>
+</div>
 
-    function openBlog() {
-      window.location.href = 'blog.html';
-    }
+<!-- Footer -->
+<footer>
+  © 2025 Kyle Cinnamond. All rights reserved.
+</footer>
 
-    function toggleContactModal() {
-      const overlay = document.getElementById('overlay');
-      const modal = document.getElementById('contactModal');
-      const isVisible = overlay.style.display === 'block';
-      overlay.style.display = isVisible ? 'none' : 'block';
-      modal.style.display = isVisible ? 'none' : 'block';
-    }
-  </script>
+<!-- Scripts -->
+<script>
+function openAboutMe() {
+  window.location.href = 'aboutme.html';
+}
+
+function openExperience() {
+  window.location.href = 'Experience.html';
+}
+
+function openBlog() {
+  window.location.href = 'blog.html';
+}
+
+function toggleContactModal() {
+  const overlay = document.getElementById('overlay');
+  const modal = document.getElementById('contactModal');
+  const isVisible = overlay.style.display === 'block';
+  overlay.style.display = isVisible ? 'none' : 'block';
+  modal.style.display = isVisible ? 'none' : 'block';
+}
+
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
 </body>
 </html>
