@@ -5,39 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Resume</title>
 <style>
-html {
-  min-height: 100%;
-  background: linear-gradient(to bottom right, royalblue, #ffffff);
-  background-attachment: fixed;
-}
-body {
+html, body {
   margin: 0;
+  padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fb;
   color: #333;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 /* Navigation */
 .navbar {
+  background: #ffffff;
+  color: #007acc;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0,0,128,0.4);
-  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;
-  box-sizing: border-box;
 }
 .navbar h1 {
   margin: 0;
   font-size: 28px;
-  color: white;
+  color: #007acc;
 }
 .nav-buttons {
   display: flex;
@@ -47,15 +42,15 @@ body {
   padding: 8px 16px;
   font-size: 16px;
   background: transparent;
-  color: white;
-  border: 1.5px solid white;
+  color: #007acc;
+  border: 1px solid rgba(0,122,204,0.4);
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s, border 0.3s;
 }
 .nav-buttons button:hover {
-  background: white;
-  color: royalblue;
+  background: rgba(0,122,204,0.1);
+  border: 1px solid rgba(0,122,204,0.6);
 }
 .hamburger {
   display: none;
@@ -66,26 +61,26 @@ body {
 .hamburger div {
   width: 25px;
   height: 3px;
-  background: white;
+  background: #007acc;
   border-radius: 2px;
 }
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background: rgba(0,0,128,0.9);
+  background: #ffffff;
   position: fixed;
   top: 70px;
   right: 0;
   width: 200px;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   padding: 10px 0;
   z-index: 999;
 }
 .mobile-menu button {
   background: transparent;
   border: none;
-  color: white;
+  color: #007acc;
   padding: 12px 16px;
   text-align: left;
   font-size: 16px;
@@ -93,18 +88,18 @@ body {
   width: 100%;
 }
 .mobile-menu button:hover {
-  background: rgba(255,255,255,0.2);
+  background: rgba(0,122,204,0.1);
 }
 
 /* Header Section */
 .header {
   text-align: center;
   padding: 140px 20px 40px;
-  color: white;
 }
 .header h2 {
   font-size: 42px;
   margin-bottom: 10px;
+  color: #007acc;
 }
 .header p {
   font-size: 18px;
@@ -115,15 +110,15 @@ body {
 /* Resume Embed */
 .resume-container {
   width: 90%;
-  margin: 0 auto;
-  padding: 0 0 60px;
+  max-width: 1000px;
+  margin: 40px auto 60px;
 }
 .resume-container iframe {
   width: 100%;
   height: 800px;
   border: none;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   background: white;
 }
 .download-link {
@@ -144,10 +139,11 @@ body {
 footer {
   text-align: center;
   padding: 20px;
-  background: rgba(0,0,128,0.2);
-  color: white;
+  background: #ffffff;
+  color: #888;
   font-size: 14px;
   margin-top: auto;
+  border-top: 1px solid #ddd;
 }
 
 /* Contact Modal */
