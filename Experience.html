@@ -142,6 +142,7 @@ body {
 .download-container {
   text-align: center;
   margin-top: 10px;
+  display: none;
 }
 .download-button {
   display: inline-block;
@@ -240,11 +241,14 @@ details[open] {
   }
   .pdf-mobile {
     display: block;
-    height: auto;
+  }
+  .download-container {
+    display: block;
   }
 }
 @media (min-width: 801px) {
-  .pdf-mobile {
+  .pdf-mobile,
+  .download-container {
     display: none;
   }
 }
