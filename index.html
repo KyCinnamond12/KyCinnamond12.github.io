@@ -20,6 +20,7 @@ body {
   min-height: 100vh;
 }
 
+/* Navigation Bar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -62,24 +63,68 @@ body {
   color: royalblue;
 }
 
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  padding: 140px 20px 60px;
-  width: 90%;
-  margin: 0 auto;
-  box-sizing: border-box;
-  flex: 1; /* Make the content fill vertical space */
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
 }
 
-.left,
-.right {
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 128, 0.9);
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.mobile-menu button {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.mobile-menu button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Main Section */
+.main-content {
+  display: flex;
+  flex: 1;
+  padding: 140px 20px 40px;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.left, .right {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 20px;
   flex: 1 1 400px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 8px;
-  padding: 30px;
+  max-width: 600px;
   box-sizing: border-box;
 }
 
@@ -94,8 +139,7 @@ body {
 
 .left p {
   font-size: 18px;
-  line-height: 1.5;
-  margin: 15px 0;
+  line-height: 1.6;
 }
 
 .left .cta-button {
@@ -107,6 +151,7 @@ body {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
+  margin-top: 20px;
 }
 
 .left .cta-button:hover {
@@ -115,22 +160,42 @@ body {
 }
 
 .right h3 {
-  font-size: 28px;
+  font-size: 24px;
   margin-top: 0;
-  text-align: center;
+  margin-bottom: 15px;
 }
 
-.right ul {
-  list-style: none;
-  padding: 0;
+.right details {
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.right summary {
+  font-weight: bold;
   font-size: 18px;
 }
 
-.right li {
-  margin-bottom: 12px;
-  padding: 10px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 6px;
+.right summary::-webkit-details-marker {
+  display: none;
+}
+
+.right summary::after {
+  content: " ▼";
+  font-size: 14px;
+  color: #fff;
+}
+
+.right details[open] summary::after {
+  content: " ▲";
+}
+
+.right details p {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 /* Contact Modal */
@@ -141,7 +206,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 2000;
 }
 
@@ -153,7 +218,7 @@ body {
   transform: translate(-50%, -50%);
   width: 80%;
   max-width: 500px;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255,255,255,0.95);
   color: black;
   padding: 20px;
   border-radius: 10px;
@@ -175,17 +240,22 @@ footer {
   background: rgba(0, 0, 128, 0.2);
   color: white;
   font-size: 14px;
+  margin-top: auto;
 }
 
 /* Responsive */
-@media (max-width: 800px) {
-  .content {
-    flex-direction: column;
+@media (max-width: 600px) {
+  .nav-buttons {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
   }
 }
 </style>
 </head>
 <body>
+<!-- Navigation Bar -->
 <div class="navbar">
   <h1>Kyle Cinnamond</h1>
   <div class="nav-buttons">
@@ -194,26 +264,54 @@ footer {
     <button onclick="openResume()">Resume</button>
     <button onclick="toggleContactModal()">Contact Me</button>
   </div>
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 </div>
 
-<div class="content">
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button onclick="openAboutMe()">About Me</button>
+  <button onclick="openExperience()">Experience</button>
+  <button onclick="openResume()">Resume</button>
+  <button onclick="toggleContactModal()">Contact Me</button>
+</div>
+
+<!-- Main Section -->
+<div class="main-content">
   <div class="left">
     <h2>Welcome to My Personal Website</h2>
-    <p>I'm Kyle Cinnamond, passionate about finance, technology, and lifelong learning. This site showcases my professional journey, personal interests, and projects I am working on.</p>
-    <p>This website is a work in progress as I teach myself HTML and web design. Thank you for your patience as I continue to improve and learn!</p>
+    <p>
+      I'm Kyle Cinnamond, passionate about finance, technology, and lifelong learning.
+      Explore my background, experience, and thoughts on the industries that inspire me.
+      This website is a work in progress as I teach myself HTML, CSS, and the art of design.
+    </p>
     <button class="cta-button" onclick="openAboutMe()">Learn More About Me</button>
   </div>
   <div class="right">
     <h3>What's New</h3>
-    <ul>
-      <li>Launching a new research project on small-cap banks.</li>
-      <li>Learning advanced CSS and JavaScript.</li>
-      <li>Preparing for CFA Level II exam.</li>
-      <li>Revamping portfolio presentations for clients.</li>
-    </ul>
+    <details>
+      <summary>Launching a new research project on small-cap banks</summary>
+      <p>I'm collaborating with ChatGPT to build a comprehensive portfolio focusing on small-cap regional banks, including tracking earnings and regulatory changes.</p>
+    </details>
+    <details>
+      <summary>Learning advanced CSS and JavaScript</summary>
+      <p>Expanding my web development skills to include responsive design techniques, animations, and dynamic interactivity.</p>
+    </details>
+    <details>
+      <summary>Preparing for CFA Level II exam</summary>
+      <p>Continuing my professional development by studying for the CFA Level II exam scheduled for next year.</p>
+    </details>
+    <details>
+      <summary>Revamping portfolio presentations for clients</summary>
+      <p>Creating updated templates and visual materials for client presentations to better communicate investment strategies and performance.</p>
+    </details>
   </div>
 </div>
 
+<!-- Contact Modal Overlay -->
 <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
 <div class="contact-modal" id="contactModal">
   <div onclick="event.stopPropagation();">
@@ -224,10 +322,12 @@ footer {
   </div>
 </div>
 
+<!-- Footer -->
 <footer>
   © 2025 Kyle Cinnamond. All rights reserved.
 </footer>
 
+<!-- Scripts -->
 <script>
 function openAboutMe() {
   window.location.href = 'aboutme.html';
@@ -244,6 +344,10 @@ function toggleContactModal() {
   const isVisible = overlay.style.display === 'block';
   overlay.style.display = isVisible ? 'none' : 'block';
   modal.style.display = isVisible ? 'none' : 'block';
+}
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
 }
 </script>
 </body>
