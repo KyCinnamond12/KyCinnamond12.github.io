@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,19 +71,19 @@ body {
   width: 90%;
   margin: 0 auto;
   box-sizing: border-box;
-  flex: 1;
+  flex: 1; /* Make the content fill vertical space */
 }
 
-.left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.left,
+.right {
   flex: 1 1 400px;
   background: rgba(255,255,255,0.1);
   border-radius: 8px;
   padding: 30px;
   box-sizing: border-box;
+}
+
+.left {
   text-align: center;
 }
 
@@ -113,14 +112,6 @@ body {
 .left .cta-button:hover {
   background: #f0f0f0;
   transform: translateY(-2px);
-}
-
-.right {
-  flex: 1 1 400px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 8px;
-  padding: 30px;
-  box-sizing: border-box;
 }
 
 .right h3 {
