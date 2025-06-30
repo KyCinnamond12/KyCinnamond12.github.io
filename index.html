@@ -62,46 +62,48 @@ body {
   color: royalblue;
 }
 
-/* Hero Section Split */
-.hero {
-  flex: 1;
+/* Split Container */
+.hero-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  gap: 40px;
-  padding: 140px 20px 60px;
-  max-width: 1200px;
-  margin: 0 auto;
+  flex: 1;
+  margin-top: 100px;
+  gap: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
   box-sizing: border-box;
 }
 
-.hero-left, .hero-right {
-  flex: 1 1 300px;
-  background: rgba(255,255,255,0.1);
+.left-hero, .right-hero {
+  flex: 1 1 50%;
+  background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   border-radius: 10px;
-  box-sizing: border-box;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.hero-left h2 {
+.left-hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-hero h2 {
   font-size: 42px;
-  margin: 0 0 20px;
+  margin-bottom: 15px;
 }
 
-.hero-left p {
-  font-size: 20px;
+.left-hero p {
+  font-size: 18px;
   margin-bottom: 20px;
-  line-height: 1.5;
 }
 
-.hero-left .note {
-  font-size: 16px;
-  opacity: 0.8;
-  margin-bottom: 30px;
-}
-
-.hero-left .cta-button {
+.left-hero .cta-button {
   padding: 12px 24px;
   font-size: 18px;
   background: white;
@@ -112,96 +114,43 @@ body {
   transition: background 0.3s, transform 0.2s;
 }
 
-.hero-left .cta-button:hover {
+.left-hero .cta-button:hover {
   background: #f0f0f0;
   transform: translateY(-2px);
 }
 
-/* What's New Section */
-.hero-right h3 {
+.right-hero h3 {
   font-size: 24px;
   margin-top: 0;
-  border-bottom: 2px solid white;
-  padding-bottom: 8px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.updates {
+.right-hero ul {
   list-style: none;
   padding: 0;
-  margin: 20px 0 0;
 }
 
-.updates li {
-  font-size: 18px;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.right-hero li {
+  background: rgba(255,255,255,0.2);
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
 }
 
-.updates li::before {
-  content: "•";
-  color: white;
-  font-size: 24px;
-  line-height: 1;
-}
-
-/* Contact Modal */
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2000;
-}
-
-.contact-modal {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 500px;
-  background-color: rgba(255,255,255,0.95);
-  color: black;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.5);
-  z-index: 3000;
-}
-
-.contact-modal h3 {
-  text-align: center;
-  margin-top: 0;
-  color: #007acc;
-}
-
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background: rgba(0,0,128,0.2);
+  background: rgba(0, 0, 128, 0.2);
   color: white;
   font-size: 14px;
+  margin-top: auto;
 }
 
 /* Responsive */
 @media (max-width: 800px) {
-  .hero {
+  .hero-container {
     flex-direction: column;
-  }
-  .hero-left h2 {
-    font-size: 32px;
-  }
-  .hero-left p, .hero-left .note {
-    font-size: 16px;
-  }
-  .updates li {
-    font-size: 16px;
   }
 }
 </style>
@@ -218,27 +167,27 @@ footer {
   </div>
 </div>
 
-<!-- Hero Section -->
-<section class="hero">
-  <!-- Left Column -->
-  <div class="hero-left">
+<!-- Hero Container -->
+<div class="hero-container">
+  <!-- Left Section -->
+  <div class="left-hero">
     <h2>Welcome to My Personal Website</h2>
-    <p>I'm Kyle Cinnamond, passionate about finance, technology, and lifelong learning. Explore my background, experience, and thoughts on the industries that inspire me.</p>
-    <p class="note">This website is a work in progress as I teach myself HTML and web design—thank you for visiting while it's under construction!</p>
+    <p>I'm Kyle Cinnamond, passionate about finance, technology, and lifelong learning.</p>
+    <p>This site is a work in progress as I teach myself HTML and web design. Thanks for stopping by while I keep learning!</p>
     <button class="cta-button" onclick="openAboutMe()">Learn More About Me</button>
   </div>
 
-  <!-- Right Column -->
-  <div class="hero-right">
+  <!-- Right Section -->
+  <div class="right-hero">
     <h3>What's New</h3>
-    <ul class="updates">
-      <li>Completed CFA Level I in May 2025</li>
-      <li>Launched AI White Paper Project</li>
-      <li>Building a 10-Year Projection Model</li>
-      <li>Preparing to pursue CFA Level II</li>
+    <ul>
+      <li>⚡ Launched new AI white paper project</li>
+      <li>📈 Updated banking portfolio research</li>
+      <li>🎓 Passed CFA Level I Exam in May 2025</li>
+      <li>🛠️ Continuing to build this website!</li>
     </ul>
   </div>
-</section>
+</div>
 
 <!-- Contact Modal -->
 <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
@@ -276,3 +225,4 @@ function toggleContactModal() {
 </script>
 </body>
 </html>
+
