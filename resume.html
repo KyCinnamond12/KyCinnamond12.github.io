@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Resume & Certifications</title>
+<title>Resume</title>
 <style>
 html {
   min-height: 100%;
@@ -13,13 +13,13 @@ html {
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff;
+  color: #333;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* Navigation Bar */
+/* Navigation */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -29,23 +29,20 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 128, 0.4);
+  background: rgba(0,0,128,0.4);
   backdrop-filter: blur(6px);
-  box-sizing: border-box;
   z-index: 1000;
+  box-sizing: border-box;
 }
-
 .navbar h1 {
   margin: 0;
   font-size: 28px;
   color: white;
 }
-
 .nav-buttons {
   display: flex;
   gap: 12px;
 }
-
 .nav-buttons button {
   padding: 8px 16px;
   font-size: 16px;
@@ -60,8 +57,6 @@ body {
   background: white;
   color: royalblue;
 }
-
-/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -74,12 +69,10 @@ body {
   background: white;
   border-radius: 2px;
 }
-
-/* Mobile Menu */
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background: rgba(0, 0, 128, 0.9);
+  background: rgba(0,0,128,0.9);
   position: fixed;
   top: 70px;
   right: 0;
@@ -103,71 +96,55 @@ body {
   background: rgba(255,255,255,0.2);
 }
 
-/* Main Content */
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 140px 20px 40px;
-  box-sizing: border-box;
-}
-
-.main-content h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.documents {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  max-width: 1000px;
-  width: 100%;
-}
-
-.doc-card {
-  background: rgba(255,255,255,0.2);
-  border-radius: 10px;
-  padding: 20px;
-  flex: 1 1 300px;
-  max-width: 400px;
+/* Header Section */
+.header {
   text-align: center;
-  box-sizing: border-box;
+  padding: 140px 20px 40px;
+  color: white;
+}
+.header h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+.header p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.doc-card h3 {
-  margin-top: 0;
-  font-size: 22px;
-  color: #fff;
+/* Resume Embed */
+.resume-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
 }
-
-.doc-card p {
-  font-size: 16px;
-  line-height: 1.4;
+.resume-container iframe {
+  width: 100%;
+  height: 800px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  background: white;
 }
-
-.download-button {
+.download-link {
   display: inline-block;
-  margin-top: 12px;
-  padding: 10px 16px;
-  background-color: #007acc;
+  margin-top: 16px;
+  padding: 10px 18px;
+  background: #007acc;
   color: white;
   text-decoration: none;
   border-radius: 6px;
   font-size: 16px;
 }
-
-.download-button:hover {
-  background-color: #005c99;
+.download-link:hover {
+  background: #005c99;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background: rgba(0, 0, 128, 0.2);
+  background: rgba(0,0,128,0.2);
   color: white;
   font-size: 14px;
   margin-top: auto;
@@ -177,87 +154,71 @@ footer {
 .overlay {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top:0; left:0;
+  width:100%; height:100%;
   background: rgba(0,0,0,0.5);
-  z-index: 2000;
+  z-index:2000;
 }
 .contact-modal {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 500px;
+  top:50%; left:50%;
+  transform: translate(-50%,-50%);
+  width:80%;
+  max-width:500px;
   background: rgba(255,255,255,0.95);
-  color: black;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.5);
-  z-index: 3000;
-  text-align: left;
+  color:#333;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 25px rgba(0,0,0,0.5);
+  z-index:3000;
 }
 .contact-modal h3 {
-  text-align: center;
-  margin-top: 0;
-  color: #007acc;
+  text-align:center;
+  color:#007acc;
+  margin-top:0;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-  .nav-buttons {
-    display: none;
-  }
-  .hamburger {
-    display: flex;
+@media(max-width:600px){
+  .nav-buttons{display:none;}
+  .hamburger{display:flex;}
+  .resume-container iframe {
+    height:500px;
   }
 }
 </style>
 </head>
 <body>
+
 <div class="navbar">
   <h1>Kyle Cinnamond</h1>
   <div class="nav-buttons">
+    <button onclick="openHome()">Home</button>
     <button onclick="openAboutMe()">About Me</button>
     <button onclick="openExperience()">Experience</button>
-    <button onclick="openHome()">Home</button>
     <button onclick="toggleContactModal()">Contact Me</button>
   </div>
   <div class="hamburger" onclick="toggleMobileMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
+    <div></div><div></div><div></div>
   </div>
 </div>
-
 <div class="mobile-menu" id="mobileMenu">
+  <button onclick="openHome()">Home</button>
   <button onclick="openAboutMe()">About Me</button>
   <button onclick="openExperience()">Experience</button>
-  <button onclick="openHome()">Home</button>
   <button onclick="toggleContactModal()">Contact Me</button>
 </div>
 
-<div class="main-content">
-  <h2>Resume & Certifications</h2>
-  <div class="documents">
-    <div class="doc-card">
-      <h3>Resume</h3>
-      <p>A detailed overview of my education, work experience, and professional skills.</p>
-      <a class="download-button" href="KyleCinnamondResume.pdf" target="_blank">View / Download</a>
-    </div>
-    <div class="doc-card">
-      <h3>CFA Level I</h3>
-      <p>Passed Level I of the Chartered Financial Analyst (CFA) Program in May 2025.</p>
-      <a class="download-button" href="CFA_Certificate.pdf" target="_blank">View Certificate</a>
-    </div>
-    <div class="doc-card">
-      <h3>Additional Certifications</h3>
-      <p>Coming soon: other credentials and certificates I've earned.</p>
-    </div>
-  </div>
+<div class="header">
+  <h2>My Resume</h2>
+  <p>You can view or download my resume directly below.</p>
+</div>
+
+<div class="resume-container">
+  <iframe src="KyleCinnamondResume.pdf"></iframe>
+  <br/>
+  <a class="download-link" href="KyleCinnamondResume.pdf" target="_blank">Download Resume PDF</a>
 </div>
 
 <footer>
@@ -275,25 +236,19 @@ footer {
 </div>
 
 <script>
-function openAboutMe() {
-  window.location.href = 'aboutme.html';
+function openHome(){window.location.href='index.html';}
+function openAboutMe(){window.location.href='aboutme.html';}
+function openExperience(){window.location.href='Experience.html';}
+function toggleContactModal(){
+  const overlay=document.getElementById('overlay');
+  const modal=document.getElementById('contactModal');
+  const visible=overlay.style.display==='block';
+  overlay.style.display=visible?'none':'block';
+  modal.style.display=visible?'none':'block';
 }
-function openExperience() {
-  window.location.href = 'Experience.html';
-}
-function openHome() {
-  window.location.href = 'index.html';
-}
-function toggleContactModal() {
-  const overlay = document.getElementById('overlay');
-  const modal = document.getElementById('contactModal');
-  const isVisible = overlay.style.display === 'block';
-  overlay.style.display = isVisible ? 'none' : 'block';
-  modal.style.display = isVisible ? 'none' : 'block';
-}
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+function toggleMobileMenu(){
+  const menu=document.getElementById('mobileMenu');
+  menu.style.display=menu.style.display==='flex'?'none':'flex';
 }
 </script>
 </body>
