@@ -121,9 +121,6 @@ body {
 .pdf,
 .pdf-mobile {
   flex: 1 1 500px;
-}
-.pdf {
-  height: 450px;
   border-radius: 8px;
   overflow: hidden;
   background-color: #ffffff;
@@ -131,19 +128,17 @@ body {
 }
 .pdf iframe {
   width: 100%;
-  height: 100%;
+  height: 450px;
   border: none;
 }
 .pdf-mobile img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
 }
 .download-container {
   text-align: center;
   margin-top: 10px;
-  display: none;
 }
 .download-button {
   display: inline-block;
@@ -203,9 +198,6 @@ details summary {
   border: 1px solid #ccc;
   border-radius: 6px;
   background: #f0f0f0;
-  margin-bottom: 0;
-}
-details[open] {
   margin-bottom: 10px;
 }
 .desktop-desc {
@@ -243,13 +235,9 @@ details[open] {
   .pdf-mobile {
     display: block;
   }
-  .download-container {
-    display: block;
-  }
 }
 @media (min-width: 801px) {
-  .pdf-mobile,
-  .download-container {
+  .pdf-mobile {
     display: none;
   }
 }
@@ -293,9 +281,9 @@ details[open] {
   </div>
   <div class="pdf-mobile">
     <img src="AIPage1.png" alt="AI White Paper Preview">
-  </div>
-  <div class="download-container">
-    <a class="download-button" href="AIwhitepaper.pdf" download>Download Full PDF</a>
+    <div class="download-container">
+      <a class="download-button" href="AIwhitepaper.pdf" download>Download Full PDF</a>
+    </div>
   </div>
   <div class="text">
     <h5>Artificial Intelligence White Paper Project</h5>
@@ -318,9 +306,9 @@ details[open] {
   </div>
   <div class="pdf-mobile">
     <img src="LBMay25Page1.png" alt="Banking Portfolio Look Book Preview">
-  </div>
-  <div class="download-container">
-    <a class="download-button" href="LB2024.pdf" download>Download Full PDF</a>
+    <div class="download-container">
+      <a class="download-button" href="LB2024.pdf" download>Download Full PDF</a>
+    </div>
   </div>
   <div class="text">
     <h4>Banking Portfolio Look Book Project</h4>
@@ -381,6 +369,5 @@ function toggleMenu() {
   nav.classList.toggle('show');
 }
 </script>
-
 </body>
 </html>
