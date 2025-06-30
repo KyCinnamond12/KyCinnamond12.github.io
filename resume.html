@@ -1,206 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Experience</title>
-    <style>
-        body {
-            background-color: rgb(242, 242, 242);
-            margin: 0;
-            font-family: 'Rockwell', sans-serif;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Resume & Certifications</title>
+<style>
+html {
+  min-height: 100%;
+  background: linear-gradient(to bottom right, royalblue, #ffffff);
+  background-attachment: fixed;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-        h1 {
-            font-size: 40px;
-            text-align: center;
-            padding: 30px;
-            margin: 0;
-        }
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 128, 0.4);
+  backdrop-filter: blur(6px);
+  box-sizing: border-box;
+  z-index: 1000;
+}
 
-        nav {
-            background-color: #333;
-            overflow: hidden;
-        }
+.navbar h1 {
+  margin: 0;
+  font-size: 28px;
+  color: white;
+}
 
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
 
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
+.nav-buttons button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background: transparent;
+  color: white;
+  border: 1.5px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.nav-buttons button:hover {
+  background: white;
+  color: royalblue;
+}
 
-        .dropdown {
-            float: left;
-            overflow: hidden;
-        }
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
 
-        .dropdown .dropbtn {
-            font-size: 16px;  
-            border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0;
-        }
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(0, 0, 128, 0.9);
+  position: fixed;
+  top: 70px;
+  right: 0;
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 10px 0;
+  z-index: 999;
+}
+.mobile-menu button {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+.mobile-menu button:hover {
+  background: rgba(255,255,255,0.2);
+}
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 140px 20px 40px;
+  box-sizing: border-box;
+}
 
-        .dropdown-content a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
+.main-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
 
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
+.documents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1000px;
+  width: 100%;
+}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+.doc-card {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: center;
+  box-sizing: border-box;
+}
 
-        /* New Contact Me Link */
-        .contact-me {
-            float: right;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            position: relative;
-        }
+.doc-card h3 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #fff;
+}
 
-        .contact-me:hover .contact-menu {
-            display: block;
-        }
+.doc-card p {
+  font-size: 16px;
+  line-height: 1.4;
+}
 
-        .contact-menu {
-            display: none;
-            position: absolute;
-            background-color: lightgrey; /* Updated background color */
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            right: 0;
-            top: 60px;
-        }
+.download-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
 
-        .contact-menu a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
+.download-button:hover {
+  background-color: #005c99;
+}
 
-        .contact-menu a:hover {
-            background-color: #ddd;
-        }
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 128, 0.2);
+  color: white;
+  font-size: 14px;
+  margin-top: auto;
+}
 
-        /* New Contact Modal */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 2;
-        }
+/* Contact Modal */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+}
+.contact-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background: rgba(255,255,255,0.95);
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+  z-index: 3000;
+  text-align: left;
+}
+.contact-modal h3 {
+  text-align: center;
+  margin-top: 0;
+  color: #007acc;
+}
 
-        .contact-modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70%;
-            max-width: 500px; /* Set max-width as needed */
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-            text-align: left;
-            z-index: 3;
-        }
-
-        .contact-content {
-            text-align: left;
-        }
-
-        .section-divider {
-            width: 100%;
-            border-bottom: 1px solid #333; /* Dark grey border color */
-            margin-top: -10px; /* Adjust margin as needed */   
-        }
-        
-    </style>
+/* Responsive */
+@media (max-width: 600px) {
+  .nav-buttons {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+</style>
 </head>
 <body>
-    <nav>
-        <div class="dropdown">
-            <button class="dropbtn">Navigation</button>
-            <div class="dropdown-content">
-                <a href="index.html">Home</a>
-                <a href="resume.html">Resume & Certificates</a>
-                <a href="blog.html">Blog</a>
-                <a href="Experience.html">Experience</a>
-            </div>
-        </div>
+<div class="navbar">
+  <h1>Kyle Cinnamond</h1>
+  <div class="nav-buttons">
+    <button onclick="openAboutMe()">About Me</button>
+    <button onclick="openExperience()">Experience</button>
+    <button onclick="openHome()">Home</button>
+    <button onclick="toggleContactModal()">Contact Me</button>
+  </div>
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
 
-        <a href="#" class="contact-me" onclick="toggleContactModal()">Contact Me
-            <div class="contact-menu">
-                <a href="#">Email</a>
-                <a href="#">Phone</a>
-            </div>
-        </a>
-    </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <button onclick="openAboutMe()">About Me</button>
+  <button onclick="openExperience()">Experience</button>
+  <button onclick="openHome()">Home</button>
+  <button onclick="toggleContactModal()">Contact Me</button>
+</div>
 
-    <h1>Documents</h1>
-
-    <div class="section-divider section-divider-1"></div>  
-  
-    <!-- Overlay div -->
-    <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
-
-    <!-- Contact Modal -->
-    <div class="contact-modal" id="contactModal">
-        <div class="contact-content" onclick="event.stopPropagation();">
-            <h2 style="text-align: center;">Contact Information</h2>
-            <p>Email: Kycinnamond@gmail.com</p>
-            <p>Phone: +1 (610)-732-8556</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/kyle-cinnamond-253616227" target="_blank">www.linkedin.com/in/kyle-cinnamond-253616227</a></p>
-        </div>
+<div class="main-content">
+  <h2>Resume & Certifications</h2>
+  <div class="documents">
+    <div class="doc-card">
+      <h3>Resume</h3>
+      <p>A detailed overview of my education, work experience, and professional skills.</p>
+      <a class="download-button" href="KyleCinnamondResume.pdf" target="_blank">View / Download</a>
     </div>
-    
-    <script>
-        function toggleContactModal() {
-            var overlay = document.getElementById('overlay');
-            var modal = document.getElementById('contactModal');
-            overlay.style.display = (overlay.style.display === 'none' || overlay.style.display === '') ? 'block' : 'none';
-            modal.style.display = (modal.style.display === 'none' || modal.style.display === '') ? 'block' : 'none';
-        }
-    </script>
+    <div class="doc-card">
+      <h3>CFA Level I</h3>
+      <p>Passed Level I of the Chartered Financial Analyst (CFA) Program in May 2025.</p>
+      <a class="download-button" href="CFA_Certificate.pdf" target="_blank">View Certificate</a>
+    </div>
+    <div class="doc-card">
+      <h3>Additional Certifications</h3>
+      <p>Coming soon: other credentials and certificates I've earned.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 Kyle Cinnamond. All rights reserved.
+</footer>
+
+<div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
+<div class="contact-modal" id="contactModal">
+  <div onclick="event.stopPropagation();">
+    <h3>Contact Information</h3>
+    <p>Email: <a href="mailto:Kycinnamond@gmail.com">Kycinnamond@gmail.com</a></p>
+    <p>Phone: +1 (610)-732-8556</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/kyle-cinnamond-253616227" target="_blank">LinkedIn Profile</a></p>
+  </div>
+</div>
+
+<script>
+function openAboutMe() {
+  window.location.href = 'aboutme.html';
+}
+function openExperience() {
+  window.location.href = 'Experience.html';
+}
+function openHome() {
+  window.location.href = 'index.html';
+}
+function toggleContactModal() {
+  const overlay = document.getElementById('overlay');
+  const modal = document.getElementById('contactModal');
+  const isVisible = overlay.style.display === 'block';
+  overlay.style.display = isVisible ? 'none' : 'block';
+  modal.style.display = isVisible ? 'none' : 'block';
+}
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+}
+</script>
 </body>
 </html>
