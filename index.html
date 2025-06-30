@@ -20,7 +20,6 @@ body {
   min-height: 100vh;
 }
 
-/* Navigation Bar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -63,7 +62,6 @@ body {
   color: royalblue;
 }
 
-/* Hero Section */
 .content {
   display: flex;
   flex-wrap: wrap;
@@ -73,6 +71,7 @@ body {
   width: 90%;
   margin: 0 auto;
   box-sizing: border-box;
+  flex: 1; /* Make the content fill vertical space */
 }
 
 .left,
@@ -187,7 +186,6 @@ footer {
 </style>
 </head>
 <body>
-<!-- Navigation Bar -->
 <div class="navbar">
   <h1>Kyle Cinnamond</h1>
   <div class="nav-buttons">
@@ -198,7 +196,6 @@ footer {
   </div>
 </div>
 
-<!-- Content -->
 <div class="content">
   <div class="left">
     <h2>Welcome to My Personal Website</h2>
@@ -217,7 +214,6 @@ footer {
   </div>
 </div>
 
-<!-- Contact Modal Overlay -->
 <div class="overlay" id="overlay" onclick="toggleContactModal()"></div>
 <div class="contact-modal" id="contactModal">
   <div onclick="event.stopPropagation();">
@@ -228,7 +224,6 @@ footer {
   </div>
 </div>
 
-<!-- Footer -->
 <footer>
   © 2025 Kyle Cinnamond. All rights reserved.
 </footer>
@@ -253,4 +248,3 @@ function toggleContactModal() {
 </script>
 </body>
 </html>
-
