@@ -159,42 +159,47 @@ body {
 
 /* What's New Box */
 .whats-new-box {
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  max-width: 800px;
-  flex-wrap: wrap;
-}
-
-.dropdown-column {
-  flex: 1 1 300px;
   background: rgba(255,255,255,0.2);
   border-radius: 10px;
   padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
 }
 
-.dropdown-column details summary {
-  font-weight: bold;
-  font-size: 18px;
+.whats-new-box h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.whats-new-box details {
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 12px;
   cursor: pointer;
 }
 
-.dropdown-column details p {
+.whats-new-box summary {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.whats-new-box details p {
   margin-top: 10px;
   font-size: 16px;
   line-height: 1.5;
 }
 
-/* Responsive: stack dropdowns on small screens */
+/* Responsive */
 @media (max-width: 600px) {
   .nav-buttons {
     display: none;
   }
   .hamburger {
     display: flex;
-  }
-  .whats-new-box {
-    flex-direction: column;
   }
 }
 
@@ -206,7 +211,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0,0,0,0.5);
   z-index: 2000;
 }
 
@@ -280,24 +285,23 @@ footer {
     <button class="cta-button" onclick="openAboutMe()">More About Me!</button>
   </div>
   <div class="whats-new-box">
-    <div class="dropdown-column">
-      <details>
-        <summary>Launching a new Portfolio utilizing Artificial Intelligence</summary>
-        <p>
-          I'm collaborating with ChatGPT to create a long-only U.S. stock portfolio designed to outperform the S&P 500 over time. 
-          The approach combines careful fundamental research with technical analysis to select a small group of high-quality companies and ETFs. 
-          The portfolio is capped at 10 holdings to stay focused yet diversified and is reviewed monthly to adapt to new opportunities and market trends.
-        </p>
-      </details>
-    </div>
-    <div class="dropdown-column">
-      <details>
-        <summary>Revamping portfolio presentations for clients</summary>
-        <p>
-          Creating updated templates and visual materials for client presentations to better communicate investment strategies and performance while working for Princeton Capital Management LLC.
-        </p>
-      </details>
-    </div>
+    <h3>What's New</h3>
+    <details>
+      <summary>Launching a new Portfolio utilizing Artificial Intelligence</summary>
+      <p>I'm collaborating with ChatGPT to create a long-only U.S. stock portfolio designed to outperform the S&P 500 over time. The approach combines careful fundamental research with technical analysis to select a small group of high-quality companies and ETFs. The portfolio is capped at 10 holdings to stay focused yet diversified and is reviewed monthly to adapt to new opportunities and market trends.</p>
+    </details>
+    <details>
+      <summary>Learning advanced CSS and JavaScript</summary>
+      <p>Expanding my web development skills to include responsive design techniques, animations, and dynamic interactivity.</p>
+    </details>
+    <details>
+      <summary>Preparing for CFA Level II exam</summary>
+      <p>Continuing my professional development by studying for the CFA Level II exam scheduled for next year.</p>
+    </details>
+    <details>
+      <summary>Revamping portfolio presentations for clients</summary>
+      <p>Creating updated templates and visual materials for client presentations to better communicate investment strategies and performance while working for Princeton Capital Management LLC.</p>
+    </details>
   </div>
 </div>
 
@@ -318,15 +322,9 @@ footer {
 </footer>
 
 <script>
-function openAboutMe() {
-  window.location.href = 'aboutme.html';
-}
-function openExperience() {
-  window.location.href = 'Experience.html';
-}
-function openResume() {
-  window.location.href = 'resume.html';
-}
+function openAboutMe() { window.location.href = 'aboutme.html'; }
+function openExperience() { window.location.href = 'Experience.html'; }
+function openResume() { window.location.href = 'resume.html'; }
 function toggleContactModal() {
   const overlay = document.getElementById('overlay');
   const modal = document.getElementById('contactModal');
@@ -338,6 +336,19 @@ function toggleMobileMenu() {
   const menu = document.getElementById('mobileMenu');
   menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
 }
+
+// Ensure only one details is open
+document.querySelectorAll('.whats-new-box details').forEach((detail) => {
+  detail.addEventListener('toggle', () => {
+    if (detail.open) {
+      document.querySelectorAll('.whats-new-box details').forEach((other) => {
+        if (other !== detail) {
+          other.removeAttribute('open');
+        }
+      });
+    }
+  });
+});
 </script>
 </body>
 </html>
